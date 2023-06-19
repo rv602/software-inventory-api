@@ -11,7 +11,7 @@ def get_node_module_paths():
     if system == "Darwin":
         cmd = "mdfind -name node_modules | xargs dirname | grep -v '/node_modules$' | grep -v '/node_modules/' | grep -v '/\..*/' > tmp_paths.json && grep '^/Users' tmp_paths.json > tmp2_paths.json"
     elif system == "Linux":
-        cmd = "plocate -r '/node_modules$' | xargs dirname | grep -v '/node_modules$' | grep -v '/node_modules/' | grep -v '/\..*/' > tmp_paths.json && grep '^/home' tmp_paths.json > tmp2_paths.json"
+        cmd = "locate -r '/node_modules$' | xargs dirname | grep -v '/node_modules$' | grep -v '/node_modules/' | grep -v '/\..*/' > tmp_paths.json && grep '^/home' tmp_paths.json > tmp2_paths.json"
 
     subprocess.call(cmd, shell=True)
 
