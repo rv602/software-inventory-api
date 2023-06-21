@@ -13,8 +13,18 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. Run the application
+3. Create .env file
+```
+touch .env
+```
+4. Add environment vairables (Get the key from [NVD_Key](https://nvd.nist.gov/developers/request-an-api-key) or Contact for the key)
+```
+API_KEY=...
+```
+
+5. Run the application
 
 ```
 uvicorn main:app --reload
 ```
+
