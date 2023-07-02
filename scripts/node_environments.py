@@ -4,23 +4,29 @@ import platform
 import subprocess
 import base64
 
-
 def get_node_module_paths():
     system = platform.system()
+    paths = []
 
     if system == "Darwin":
-        cmd = "mdfind -name node_modules | xargs dirname | grep -v '/node_modules$' | grep -v '/node_modules/' | grep -v '/\..*/' > tmp_paths.json && grep '^/Users' tmp_paths.json > tmp2_paths.json"
+        cmd = "mdfind -name node_modules | xargs dirname | grep -v '/node_modules$' | grep -v '/node_modules/' | grep -v '/\..*/'"
     elif system == "Linux":
-        cmd = "locate -r '/node_modules$' | xargs dirname | grep -v '/node_modules$' | grep -v '/node_modules/' | grep -v '/\..*/' > tmp_paths.json && grep '^/home' tmp_paths.json > tmp2_paths.json"
+        cmd = "locate -r '/node_modules$' | xargs dirname | grep -v '/node_modules$' | grep -v '/node_modules/' | grep -v '/\..*/'"
 
-    subprocess.call(cmd, shell=True)
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    output_lines = result.stdout.splitlines()
+    
+    for line in output_lines:
+        if system == "Darwin" and line.startswith("/Users"):
+            paths.append(line)
+        elif system == "Linux" and line.startswith("/home"):
+            paths.append(line)
+
+    return paths
 
 
 def read_and_parse_paths_file():
-    with open("tmp2_paths.json", "r") as f:
-        paths = f.readlines()
-
-    paths = [path.strip() for path in paths]
+    paths = get_node_module_paths()
     paths_with_ids = []
 
     for path in paths:
@@ -34,29 +40,16 @@ def read_and_parse_paths_file():
                 dependencies.update(package_json["dependencies"])
             if "devDependencies" in package_json:
                 dependencies.update(package_json["devDependencies"])
-            # if "peerDependencies" in package_json:
-            #     dependencies.update(package_json["peerDependencies"])
-            # if "optionalDependencies" in package_json:
-            #     dependencies.update(package_json["optionalDependencies"])
-            # if "bundledDependencies" in package_json:
-            #     dependencies.update(package_json["bundledDependencies"])
             for key in dependencies.keys():
-                if dependencies[key].startswith("^"):
+                if dependencies[key].startswith('^'):
                     dependencies[key] = dependencies[key][1:]
-        paths_with_ids.append({"id": id, "path": path, "dependencies": dependencies})
+            paths_with_ids.append({"id": id, "path": path, "dependencies": dependencies})
 
     return paths_with_ids
-
 
 def write_parsed_paths_file(parsed_paths):
     with open("node_paths.json", "w") as f:
         json.dump(parsed_paths, f, indent=4)
-
-
-def remove_temp_files():
-    os.remove("tmp_paths.json")
-    os.remove("tmp2_paths.json")
-
 
 def remove_empty_dependencies(json_file_path):
     with open(json_file_path, "r") as f:
@@ -73,5 +66,4 @@ if __name__ == "__main__":
     get_node_module_paths()
     parsed_paths = read_and_parse_paths_file()
     write_parsed_paths_file(parsed_paths)
-    remove_temp_files()
     remove_empty_dependencies("node_paths.json")
