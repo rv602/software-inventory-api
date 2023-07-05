@@ -78,22 +78,37 @@ def get_vulnerable_dependencies_for_paths(paths):
 
 if __name__ == "__main__":
     node_module_paths = get_node_module_paths()
-    #print(node_module_paths)
     vulnerable_dependencies = get_vulnerable_dependencies_for_paths(node_module_paths)
+    
+    result_data = []
+    
     for dependency in vulnerable_dependencies:
         path = dependency["path"]
         vulnerabilities = dependency["vulnerabilities"]
-        print("Path:", path)
-        print("Vulnerabilities:")
+        advisory_list = []
+        
         for advisory_id, advisory in vulnerabilities.items():
-            print("Advisory ID:", advisory_id)
-            print("Name:", advisory.get("module_name"))
-            print("Version:", advisory.get("findings", {})[0].get("version"))
-            print("Title:", advisory.get("title"))
-            print("Severity:", advisory.get("severity"))
-            print("Description:", advisory.get("overview"))
-            print("CVE IDs:")
-            for cve_id in advisory.get("cves", []):
-                print("  ", cve_id)
-                #get_cve_details(cve_id)
-            print("------------------------------")
+            advisory_info = {
+                "Advisory ID": advisory_id,
+                "Title": advisory.get("title"),
+                "Name": advisory.get("module_name"),
+                "Version": advisory.get("findings", {})[0].get("version"),
+                "Severity": advisory.get("severity"),
+                "Description": advisory.get("overview"),
+                "CVE IDs": advisory.get("cves", []),
+            }
+            #for cve_id in advisory.get("cves", []):
+            #  print("  ", cve_id)
+            #  get_cve_details(cve_id)
+            advisory_list.append(advisory_info)
+        
+        dependency_data = {
+            "Path": path,
+            "Vulnerabilities": advisory_list,
+        }
+        result_data.append(dependency_data)
+    
+    with open("vulnerabilities.json", "w") as f:
+        json.dump(result_data, f, indent=4)
+        
+    print("Data saved to vulnerabilities.json file.")
