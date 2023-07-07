@@ -3,6 +3,7 @@ import os
 import platform
 import subprocess
 import base64
+import requests
 
 def get_node_module_paths():
     system = platform.system()
@@ -25,45 +26,89 @@ def get_node_module_paths():
     return paths
 
 
-def read_and_parse_paths_file():
-    paths = get_node_module_paths()
-    paths_with_ids = []
+def get_vulnerable_dependencies(path):
+    cmd = f"npm --prefix {path} audit --json"
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    output = result.stdout.strip()
+    
+    #print(f"Running on {path}")
+    if output:
+        audit_data = json.loads(output)
+        vulnerabilities = audit_data.get("advisories", {})
+        return vulnerabilities
+    else:
+        return {}
+
+
+def get_cve_details(cve_id):
+    api_url = f"https://services.nvd.nist.gov/rest/json/cves/2.0?cveId={cve_id}"
+    response = requests.get(api_url)
+    response_data = response.json()
+    vulnerabilities = response_data.get("vulnerabilities", [])
+
+    for vulnerability in vulnerabilities:
+        cve = vulnerability.get("cve", {})
+        cve_id = cve.get("id")
+        description = cve.get("descriptions", [{}])[0].get("value")
+        cvss_metrics = vulnerability.get("metrics", {}).get("cvssMetricV31", [])
+
+        print("CVE ID:", cve_id)
+        print("Description:", description)
+        print("CVSS Metrics:")
+        for metric in cvss_metrics:
+            vector_string = metric.get("cvssData", {}).get("vectorString")
+            base_score = metric.get("cvssData", {}).get("baseScore")
+            base_severity = metric.get("cvssData", {}).get("baseSeverity")
+            print("  Vector String:", vector_string)
+            print("  Base Score:", base_score)
+            print("  Base Severity:", base_severity)
+            print("------------------------------")
+
+
+def get_vulnerable_dependencies_for_paths(paths):
+    vulnerable_dependencies = []
 
     for path in paths:
-        id = base64.urlsafe_b64encode(os.urandom(6)).decode()
-        dependencies = {}
-        package_json_path = os.path.join(path, "package.json")
-        if os.path.exists(package_json_path):
-            with open(package_json_path, "r") as f:
-                package_json = json.load(f)
-            if "dependencies" in package_json:
-                dependencies.update(package_json["dependencies"])
-            if "devDependencies" in package_json:
-                dependencies.update(package_json["devDependencies"])
-            for key in dependencies.keys():
-                if dependencies[key].startswith('^'):
-                    dependencies[key] = dependencies[key][1:]
-            paths_with_ids.append({"id": id, "path": path, "dependencies": dependencies})
+        vulnerabilities = get_vulnerable_dependencies(path)
+        if vulnerabilities:
+            vulnerable_dependencies.append({"path": path, "vulnerabilities": vulnerabilities})
 
-    return paths_with_ids
-
-def write_parsed_paths_file(parsed_paths):
-    with open("node_paths.json", "w") as f:
-        json.dump(parsed_paths, f, indent=4)
-
-def remove_empty_dependencies(json_file_path):
-    with open(json_file_path, "r") as f:
-        json_data = json.load(f)
-
-    # filter out objects with empty "dependencies" attribute
-    json_data = [obj for obj in json_data if obj.get("dependencies")]
-
-    with open(json_file_path, "w") as f:
-        json.dump(json_data, f)
+    return vulnerable_dependencies
 
 
 if __name__ == "__main__":
-    get_node_module_paths()
-    parsed_paths = read_and_parse_paths_file()
-    write_parsed_paths_file(parsed_paths)
-    remove_empty_dependencies("node_paths.json")
+    node_module_paths = get_node_module_paths()
+    vulnerable_dependencies = get_vulnerable_dependencies_for_paths(node_module_paths)
+    
+    result_data = []
+    
+    for dependency in vulnerable_dependencies:
+        path = dependency["path"]
+        vulnerabilities = dependency["vulnerabilities"]
+        advisory_list = []
+        
+        for advisory_id, advisory in vulnerabilities.items():
+            advisory_info = {
+                "Advisory ID": advisory_id,
+                "Title": advisory.get("title"),
+                "Name": advisory.get("module_name"),
+                "Version": advisory.get("findings", {})[0].get("version"),
+                "Severity": advisory.get("severity"),
+                "Description": advisory.get("overview"),
+                "CVE IDs": advisory.get("cves", []),
+            }
+            #for cve_id in advisory.get("cves", []):
+            #  print("  ", cve_id)
+            #  get_cve_details(cve_id)
+            advisory_list.append(advisory_info)
+        
+        dependency_data = {
+            "Path": path,
+            "Vulnerabilities": advisory_list,
+        }
+        result_data.append(dependency_data)
+    
+    with open("vulnerabilities.json", "w") as f:
+        json.dump(result_data, f, indent=4)
+        
+    print("Data saved to vulnerabilities.json file.")
