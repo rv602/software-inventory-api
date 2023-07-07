@@ -35,30 +35,30 @@ def node_environments():
     try:
         subprocess.run(["python", "scripts/node_environments.py"], check=True)
 
-        with open("node_paths.json", "r") as f:
+        with open("node_vulnerabilities.json", "r") as f:
             node_paths = json.load(f)
 
         return node_paths
     except subprocess.CalledProcessError:
         return {"message": "Script execution failed."}
 
-@app.get("/vulnerabilities")
-async def get_vulnerabilities(name: str, version: str):
-    try:
-        url = f"https://services.nvd.nist.gov/rest/json/cves/1.0?cpeMatchString=cpe%3A2.3%3Aa%3A%3A{name}%3A{version}&resultsPerPage=10"
-        headers = {
-            "Content-Type": "application/json",
-            "apiKey": os.getenv("API_KEY")
-        }
+# @app.get("/vulnerabilities")
+# async def get_vulnerabilities(name: str, version: str):
+#     try:
+#         url = f"https://services.nvd.nist.gov/rest/json/cves/1.0?cpeMatchString=cpe%3A2.3%3Aa%3A%3A{name}%3A{version}&resultsPerPage=10"
+#         headers = {
+#             "Content-Type": "application/json",
+#             "apiKey": os.getenv("API_KEY")
+#         }
 
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
+#         response = requests.get(url, headers=headers)
+#         response.raise_for_status()
 
-        data = response.json()
-        if data["totalResults"] > 0:
-            return data
+#         data = response.json()
+#         if data["totalResults"] > 0:
+#             return data
 
-    except requests.exceptions.RequestException as e:
-        print(f"Request exception: {e}")
+#     except requests.exceptions.RequestException as e:
+#         print(f"Request exception: {e}")
 
-    return {"message": "No vulnerabilities found."}
+#     return {"message": "No vulnerabilities found."}
