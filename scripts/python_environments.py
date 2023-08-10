@@ -64,7 +64,7 @@ def update_json_with_dependencies():
         activate_command = (
             f"source {path}/{env}/bin/activate && safety check --json"
         )
-        # activate_command = f"source {path}/{env}/bin/activate && pip3 freeze"
+        # activate_command = f"source {path}/{env}/bin/activate && safety check --json"
         dependencies = subprocess.run(
             ["bash", "-c", activate_command], capture_output=True, text=True
         )
