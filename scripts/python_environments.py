@@ -62,7 +62,7 @@ def update_json_with_dependencies():
         env = obj["env"]
         # navigate to the path directory and activate the environment
         activate_command = (
-            f"source {path}/{env}/bin/activate && pip3 freeze && deactivate"
+            f"source {path}/{env}/bin/activate && safety check --json"
         )
         # activate_command = f"source {path}/{env}/bin/activate && pip3 freeze"
         dependencies = subprocess.run(
