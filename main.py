@@ -22,7 +22,7 @@ def python_environments():
     try:
         subprocess.run(["python", "scripts/python_environments.py"], check=True)
 
-        with open("python_paths.json", "r") as f:
+        with open("python_vulnerabilities.json", "r") as f:
             python_paths = json.load(f)
 
         return python_paths
