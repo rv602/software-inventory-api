@@ -2,6 +2,7 @@ import subprocess
 import platform
 import json
 import base64
+import uuid
 
 def get_python_paths():
     system = platform.system()
@@ -26,21 +27,30 @@ def modify_json_data(json_data):
     for path in json_data:
         last_slash_index = path.rfind("/")
         env = path[last_slash_index + 1 :]
-        modified_data.append({"path": path[:last_slash_index], "env": env})
+        modified_data.append({"ID": str(uuid.uuid4()), "Path": path[:last_slash_index], "Env": env})
 
     return modified_data
 
 def update_json_with_dependencies(json_data):
     for obj in json_data:
-        path = obj["path"]
-        env = obj["env"]
+        path = obj["Path"]
+        env = obj["Env"]
         activate_command = f"source {path}/{env}/bin/activate && safety check --json"
         vulnerabilities = subprocess.run(
             ["bash", "-c", activate_command], capture_output=True, text=True
         )
         vulnerabilities_data = json.loads(vulnerabilities.stdout)
-        vulnerabilities_list = vulnerabilities_data.get("vulnerabilities", [])
-        obj["vulnerabilities"] = vulnerabilities_list
+        vulnerabilities_list = vulnerabilities_data["vulnerabilities"]
+        filtered_vulnerabilities = []
+        for vul in vulnerabilities_list:
+            object = {}
+            object["Name"] = vul["package_name"]
+            object["Vulnerability_id"] = vul["vulnerability_id"]
+            object["CVE_id"] = vul["CVE"]
+            object["More_info"] = vul["more_info_url"]
+            object["Severity"] = vul["severity"]
+            filtered_vulnerabilities.append(object)
+        obj["Vulnerabilities"] = filtered_vulnerabilities
 
     return json_data
 
