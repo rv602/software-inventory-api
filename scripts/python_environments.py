@@ -1,8 +1,15 @@
 import subprocess
 import platform
 import json
-import base64
 import uuid
+import os
+
+cve_score_mapping = {
+    "low": (0.1, 3.9),
+    "moderate": (4.0, 6.9),
+    "high": (7.0, 8.9),
+    "critical": (9.0, 10.0)
+}
 
 def get_python_paths():
     system = platform.system()
@@ -11,7 +18,7 @@ def get_python_paths():
     if system == "Darwin":  # Mac
         cmd = "mdfind -name activate | grep '/bin/activate$' | xargs dirname | xargs dirname | grep -v '/\\..*/' | grep '^/Users' | sort -u"
     elif system == "Linux":  # Linux
-        cmd = "locate activate | egrep '/bin/activate$' | xargs -r egrep -l nondestructive 2>/dev/null | xargs -I {} dirname {} | xargs -I {} dirname {} | grep '/home'"
+        cmd = "locate activate | egrep '/bin/activate$' | egrep -v '/\..+/' | xargs -r egrep -l nondestructive 2>/dev/null | xargs -I {} dirname {} | xargs -I {} dirname {} | grep '/home'"
 
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     output_lines = result.stdout.splitlines()
@@ -35,24 +42,42 @@ def update_json_with_dependencies(json_data):
     for obj in json_data:
         path = obj["Path"]
         env = obj["Env"]
-        activate_command = f"source {path}/{env}/bin/activate && safety check --json"
-        vulnerabilities = subprocess.run(
-            ["bash", "-c", activate_command], capture_output=True, text=True
-        )
-        vulnerabilities_data = json.loads(vulnerabilities.stdout)
-        vulnerabilities_list = vulnerabilities_data["vulnerabilities"]
-        filtered_vulnerabilities = []
-        for vul in vulnerabilities_list:
-            object = {}
-            object["Name"] = vul["package_name"]
-            object["Vulnerability_id"] = vul["vulnerability_id"]
-            object["CVE_id"] = vul["CVE"]
-            object["More_info"] = vul["more_info_url"]
-            object["Severity"] = vul["severity"]
-            filtered_vulnerabilities.append(object)
-        obj["Vulnerabilities"] = filtered_vulnerabilities
+        if not os.path.exists(f"{path}/requirements.txt"):
+            cmd = f"source {path}/{env}/bin/activate && pip freeze > {path}/requirements.txt && deactivate"
+            subprocess.run(["bash", "-c", cmd], capture_output=True, text=True)
+        activate_command = f"cd {path} && ochrona --exit --report_type JSON --file requirements.txt"
+        result = subprocess.run(activate_command,shell=True, capture_output=True, text=True)
+        output_lines = result.stdout.splitlines()
 
-    return json_data
+        if "File: requirements.txt" in output_lines:
+            json_output = output_lines[output_lines.index("File: requirements.txt")+1:]
+            json_output = json.loads("".join(json_output))
+            result_for_json = json_output["findings"]
+            if len(result_for_json) == 0:
+                obj["Removing"] = True
+            else:
+                filtered_json = []
+                for finding in result_for_json:
+                    temp_obj = {}
+                    temp_obj["Name"] = finding["name"]
+                    temp_obj["Version"] = finding["found_version"].split(finding["name"]+"==")[1]
+                    temp_obj["CVE_id"] = finding["cve_id"]
+                    temp_obj["Description"] = finding["description"]
+                    for severity, (min_score, max_score) in cve_score_mapping.items():
+                        if min_score <= finding["ochrona_severity_score"] <= max_score:
+                            temp_obj["Severity"] = severity
+                            break 
+                    temp_obj["References"] = finding["references"]
+                    filtered_json.append(temp_obj)
+                obj["Vulnerabilities"] = filtered_json
+        else:
+            obj["Removing"] = True
+
+    json_data_to_return = []
+    for obj in json_data:
+        if "Removing" not in obj:
+            json_data_to_return.append(obj)
+    return json_data_to_return
 
 def write_json_to_file(data, file_path):
     with open(file_path, "w") as f:
