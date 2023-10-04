@@ -37,7 +37,7 @@ toml==0.10.2
 tomli==2.0.1
 typing_extensions==4.6.2
 url-normalize==1.4.3
-urllib3==2.0.3
+urllib3==2.0.6
 uvicorn==0.22.0
 uvloop==0.17.0
 vulners==2.0.10
