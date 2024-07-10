@@ -42,3 +42,4 @@ uvloop==0.17.0
 vulners==2.0.10
 watchfiles==0.19.0
 websockets==11.0.3
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
