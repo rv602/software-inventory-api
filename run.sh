@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Define paths to scripts and JSON files
+PYTHON_ENV_SCRIPT="scripts/python_environments.py"
+NODE_ENV_SCRIPT="scripts/node_environments.py"
+PYTHON_JSON_OUTPUT="python_vulnerabilities.json"
+NODE_JSON_OUTPUT="node_vulnerabilities.json"
+
+# Run the Python scripts to generate JSON output files
+python "$PYTHON_ENV_SCRIPT"
+if [ $? -ne 0 ]; then
+  echo "Failed to run $PYTHON_ENV_SCRIPT"
+  exit 1
+fi
+
+python "$NODE_ENV_SCRIPT"
+if [ $? -ne 0 ]; then
+  echo "Failed to run $NODE_ENV_SCRIPT"
+  exit 1
+fi
+
+# Check if JSON files are generated
+if [[ ! -f "$PYTHON_JSON_OUTPUT" || ! -f "$NODE_JSON_OUTPUT" ]]; then
+  echo "JSON output files not found."
+  exit 1
+fi
+
+# Combine JSON outputs using jq
+combined_json=$(jq -n --slurpfile python "$PYTHON_JSON_OUTPUT" --slurpfile node "$NODE_JSON_OUTPUT" \
+  '{python_environments: $python[0], node_environments: $node[0]}')
+
+# Define MongoDB Atlas connection
+MONGO_CONNECTION_STRING="mongodb+srv://meronaamabhinav:admin@cluster0.tk5f0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+DATABASE_NAME="SystemData"
+COLLECTION_NAME="Vulnerabilites"
+
+# Store combined JSON in MongoDB Atlas
+python3 <<EOF
+import pymongo
+import json
+
+# Connect to MongoDB
+client = pymongo.MongoClient("$MONGO_CONNECTION_STRING")
+db = client["$DATABASE_NAME"]
+collection = db["$COLLECTION_NAME"]
+
+# Parse and insert combined JSON data
+combined_data = json.loads('''$combined_json''')
+collection.insert_one(combined_data)
+
+print("Data successfully inserted into MongoDB Atlas.")
+EOF
