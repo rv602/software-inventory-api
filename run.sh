@@ -32,21 +32,13 @@ combined_json=$(jq -n --slurpfile python "$PYTHON_JSON_OUTPUT" --slurpfile node 
 # Define MongoDB Atlas connection
 MONGO_CONNECTION_STRING="mongodb+srv://meronaamabhinav:admin@cluster0.tk5f0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DATABASE_NAME="SystemData"
-COLLECTION_NAME="Vulnerabilites"
+COLLECTION_NAME="Vulnerabilities"
 
-# Store combined JSON in MongoDB Atlas
-python3 <<EOF
-import pymongo
-import json
+# Store combined JSON in MongoDB 
+echo $combined_json | python -c "import sys, json; from pymongo import MongoClient; client = MongoClient('$MONGO_CONNECTION_STRING'); db = client['$DATABASE_NAME']; collection = db['$COLLECTION_NAME']; collection.insert_one(json.load(sys.stdin))"
 
-# Connect to MongoDB
-client = pymongo.MongoClient("$MONGO_CONNECTION_STRING")
-db = client["$DATABASE_NAME"]
-collection = db["$COLLECTION_NAME"]
-
-# Parse and insert combined JSON data
-combined_data = json.loads('''$combined_json''')
-collection.insert_one(combined_data)
-
-print("Data successfully inserted into MongoDB Atlas.")
-EOF
+# Check if JSON is stored in MongoDB
+if [ $? -ne 0 ]; then
+  echo "Failed to store JSON in MongoDB"
+  exit 1
+fi
