@@ -18,7 +18,7 @@ def get_python_paths():
     if system == "Darwin":  # Mac
         cmd = "mdfind -name activate | grep '/bin/activate$' | xargs dirname | xargs dirname | grep -v '/\\..*/' | grep '^/Users' | sort -u"
     elif system == "Linux":  # Linux
-        cmd = "locate activate | egrep '/bin/activate$' | egrep -v '/\..+/' | xargs -r egrep -l nondestructive 2>/dev/null | xargs -I {} dirname {} | xargs -I {} dirname {} | grep '/home'"
+        cmd = "locate activate | egrep '/bin/activate$' | egrep -v '/\..+/' | xargs -I {} dirname {} | xargs -I {} dirname {} | grep '/home'"
 
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     output_lines = result.stdout.splitlines()
