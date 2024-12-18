@@ -12,19 +12,17 @@ from bson import ObjectId
 import gzip
 
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from constants import log_dir
+from constants import db_url_prod, db_url_dev, db_name, collection_js_name
 
 load_dotenv()
 
+
 def test_mongodb_connection():
     try:
-        # client = MongoClient(
-        #     os.getenv("MONGODB_URI"), 
-        #     serverSelectionTimeoutMS=5000, 
-        #     tlsCAFile=certifi.where()
-        # )
-        client = MongoClient("mongodb://localhost:27017?ssl=false")
+        client = MongoClient(db_url_dev)
         client.server_info()
         client.close()
         print("MongoDB connection successful")
@@ -32,11 +30,13 @@ def test_mongodb_connection():
     except Exception as e:
         print(f"MongoDB connection failed: {e}")
         return False
-    
+
+
 def default_serializer(obj):
     if isinstance(obj, ObjectId):
         return str(obj)
     raise TypeError(f"Type {obj.__class__.__name__} not serializable")
+
 
 def get_node_module_paths():
     system = platform.system()
@@ -58,6 +58,7 @@ def get_node_module_paths():
 
     return paths
 
+
 def get_vulnerable_dependencies(path):
     cmd = f"npm --prefix {path} audit --json"
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
@@ -70,22 +71,27 @@ def get_vulnerable_dependencies(path):
     else:
         return {}
 
+
 def get_vulnerable_dependencies_for_paths(paths):
     vulnerable_dependencies = []
 
     for path in paths:
         vulnerabilities = get_vulnerable_dependencies(path)
         if vulnerabilities:
-            vulnerable_dependencies.append({"path": path, "vulnerabilities": vulnerabilities})
+            vulnerable_dependencies.append(
+                {"path": path, "vulnerabilities": vulnerabilities}
+            )
 
     return vulnerable_dependencies
+
 
 def add_timestamps(data):
     current_time = datetime.utcnow()
     for item in data:
-        item['createdAt'] = current_time
-        item['updatedAt'] = current_time
+        item["createdAt"] = current_time
+        item["updatedAt"] = current_time
     return data
+
 
 def send_to_mongodb(data):
     print("data", data)
@@ -94,11 +100,9 @@ def send_to_mongodb(data):
             print("No vulnerability data to send to MongoDB")
             return
 
-        client = MongoClient(
-            os.getenv("MONGODB_URI"),
-        )
-        db = client['software_inventory']
-        collection = db['vulnerabilities_node']
+        client = MongoClient(db_url_dev)
+        db = client[db_name]
+        collection = db[collection_js_name]
 
         if isinstance(data, dict):
             data = [data]
@@ -148,6 +152,7 @@ def send_to_mongodb(data):
         with open(backup_file, "w") as f:
             json.dump(data, f, default=default_serializer, indent=4)
         print(f"Data saved to backup file: {backup_file}")
+
 
 if __name__ == "__main__":
 

@@ -9,7 +9,6 @@ import subprocess
 import json
 
 app = FastAPI()
-#load environment variables
 load_dotenv()
 
 origins = [
@@ -17,7 +16,7 @@ origins = [
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:8080",
-    "*"
+    "*",
 ]
 
 app.add_middleware(
@@ -58,6 +57,7 @@ def node_environments():
         return node_paths
     except subprocess.CalledProcessError:
         return {"message": "Script execution failed."}
+
 
 # @app.get("/vulnerabilities")
 # async def get_vulnerabilities(name: str, version: str):
