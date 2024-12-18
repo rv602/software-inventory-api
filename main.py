@@ -39,26 +39,30 @@ def python_environments():
     try:
         subprocess.run(["python", "scripts/python_environments.py"], check=True)
 
-        with open("python_vulnerabilities.json", "r") as f:
-            python_paths = json.load(f)
+        try:
+            with open("python_vulnerabilities.json", "r") as f:
+                python_paths = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            python_paths = []
 
         return python_paths
     except subprocess.CalledProcessError:
         return {"message": "Script execution failed."}
-
 
 @app.get("/node-environments")
 def node_environments():
     try:
         subprocess.run(["python", "scripts/node_environments.py"], check=True)
 
-        with open("node_vulnerabilities.json", "r") as f:
-            node_paths = json.load(f)
+        try:
+            with open("node_vulnerabilities.json", "r") as f:
+                node_paths = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            node_paths = []
 
         return node_paths
     except subprocess.CalledProcessError:
         return {"message": "Script execution failed."}
-
 # @app.get("/vulnerabilities")
 # async def get_vulnerabilities(name: str, version: str):
 #     try:

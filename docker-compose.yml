@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  fastapi_backend:
+    build: .
+    container_name: fastapi_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - "/:/host_root:ro"  # Mount the entire root filesystem as read-only
+    environment:
+      - MONGODB_URI=mongodb+srv://username:softwareinventory@cluster0.e2or8.mongodb.net
+      - MONGODB_DB=software_inventory
+    depends_on:
+      - mongo  # Ensure FastAPI waits for MongoDB to be ready
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+volumes:
+  mongodb_data:
