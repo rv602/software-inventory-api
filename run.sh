@@ -1,19 +1,19 @@
 #!/bin/bash
 
 # Define paths to scripts and JSON files
-PYTHON_ENV_SCRIPT="scripts/python_environments.py"
-NODE_ENV_SCRIPT="scripts/node_environments.py"
-PYTHON_JSON_OUTPUT="python_vulnerabilities.json"
-NODE_JSON_OUTPUT="node_vulnerabilities.json"
+PYTHON_ENV_SCRIPT="/Users/abhinavpandey/Developer/software-inventory-api/scripts/python_environments.py"
+NODE_ENV_SCRIPT="/Users/abhinavpandey/Developer/software-inventory-api/scripts/node_environments.py"
+PYTHON_JSON_OUTPUT="/Users/abhinavpandey/Developer/software-inventory-api/python_vulnerabilities.json"
+NODE_JSON_OUTPUT="/Users/abhinavpandey/Developer/software-inventory-api/node_vulnerabilities.json"
 
 # Run the Python scripts to generate JSON output files
-python "$PYTHON_ENV_SCRIPT"
+python3 "$PYTHON_ENV_SCRIPT"
 if [ $? -ne 0 ]; then
   echo "Failed to run $PYTHON_ENV_SCRIPT"
   exit 1
 fi
 
-python "$NODE_ENV_SCRIPT"
+python3 "$NODE_ENV_SCRIPT"
 if [ $? -ne 0 ]; then
   echo "Failed to run $NODE_ENV_SCRIPT"
   exit 1
