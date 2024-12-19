@@ -1,7 +1,4 @@
 from typing import Union
-import requests
-import os
-from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
