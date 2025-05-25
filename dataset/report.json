@@ -1,0 +1,726 @@
+[
+  {
+    "project_name": "Project 1",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["lodash", "react-dom", "babel"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["lodash", "react-dom"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 0,
+        "detection_time": 58.9,
+        "found_dependencies": []
+      }
+    ]
+  },
+  {
+    "project_name": "Project 2",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["next", "react", "webpack"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["next", "react"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["webpack"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 3",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["express", "jsonwebtoken", "helmet"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["express", "jsonwebtoken"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["helmet"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 4",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["socket.io", "mongoose", "bcrypt"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["socket.io", "mongoose"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["bcrypt"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 5",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["gatsby-plugin-sharp", "webpack", "sharp"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["gatsby-plugin-sharp", "webpack"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["sharp"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 6",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["mongodb", "react-scripts", "passport"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["mongodb", "react-scripts"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["passport"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 7",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["@angular/core", "typescript", "rxjs"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["@angular/core", "typescript"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["rxjs"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 8",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["vue", "nuxt", "vue-router"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["vue", "nuxt"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["vue-router"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 9",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["electron", "chokidar", "node-notifier"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["electron", "chokidar"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["node-notifier"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 10",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["svelte", "rollup", "vite"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["svelte", "rollup"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["vite"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 11",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["@nestjs/core", "rxjs", "typeorm"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["@nestjs/core", "rxjs"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["typeorm"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 12",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["vuex", "vue-router", "pinia"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["vuex", "vue-router"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["pinia"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 13",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["apollo-server", "graphql", "graphql-tools"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["apollo-server", "graphql"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["graphql-tools"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 14",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["jest", "babel-core", "eslint"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["jest", "babel-core"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["eslint"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 15",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": [
+          "webpack-dev-server",
+          "html-webpack-plugin",
+          "terser"
+        ]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["webpack-dev-server", "html-webpack-plugin"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["terser"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 16",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["tar", "yargs", "minimist"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["tar", "yargs"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["minimist"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 17",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["cypress", "mocha", "chai"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["cypress", "mocha"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["chai"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 18",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["storybook", "postcss", "sass"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["storybook", "postcss"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["sass"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 19",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["d3", "chart.js", "moment"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["d3", "chart.js"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["moment"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 20",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["three", "gl-matrix", "dat.gui"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["three", "gl-matrix"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["dat.gui"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 21",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["opencv-python", "scikit-learn", "tensorflow"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["opencv-python", "scikit-learn"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["tensorflow"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 22",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["celery", "redis", "kombu"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["celery", "redis"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["kombu"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 23",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["scrapy", "beautifulsoup4", "lxml"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["scrapy", "beautifulsoup4"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["lxml"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 24",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["requests", "selenium", "urllib3"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["requests", "selenium"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["urllib3"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 25",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["numpy", "matplotlib", "pytz"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["numpy", "matplotlib"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["pytz"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 26",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["tensorflow", "keras", "protobuf"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["tensorflow", "keras"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["protobuf"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 27",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["pytest", "coverage", "pytest-cov"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["pytest", "coverage"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["pytest-cov"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 28",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["ansible", "paramiko", "jinja2"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["ansible", "paramiko"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["jinja2"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 29",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["apache-airflow", "pyarrow", "pandas"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["apache-airflow", "pyarrow"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["pandas"]
+      }
+    ]
+  },
+  {
+    "project_name": "Project 30",
+    "expected_vulnerabilities": 3,
+    "scanners": [
+      {
+        "scanner_name": "VULNDET",
+        "vulnerabilities_found": 3,
+        "detection_time": 60.4,
+        "found_dependencies": ["sanic", "aiohttp", "uvloop"]
+      },
+      {
+        "scanner_name": "Dependabot",
+        "vulnerabilities_found": 2,
+        "detection_time": 72.8,
+        "found_dependencies": ["sanic", "aiohttp"]
+      },
+      {
+        "scanner_name": "Nexus IQ",
+        "vulnerabilities_found": 1,
+        "detection_time": 58.9,
+        "found_dependencies": ["uvloop"]
+      }
+    ]
+  }
+]
