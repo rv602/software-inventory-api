@@ -14,20 +14,57 @@ This backend forms the core of the inventory system, empowering users to proacti
 
 1. JavaScript Projects Detection
 
-    Node.js projects are identified by scanning directories for the presence of a package.json file, which is the primary configuration file for Node.js applications and includes critical information about the project’s dependencies. The detection script performs a structured directory search, where it validates each package.json file by ensuring the absence of a node_modules directory in any parent directory. This validation step distinguishes primary Node.js projects from nested dependencies within node_modules directories, which may contain packages not directly related to the main project.
+   Node.js projects are identified by scanning directories for the presence of a package.json file, which is the primary configuration file for Node.js applications and includes critical information about the project's dependencies. The detection script performs a structured directory search, where it validates each package.json file by ensuring the absence of a node_modules directory in any parent directory. This validation step distinguishes primary Node.js projects from nested dependencies within node_modules directories, which may contain packages not directly related to the main project.
 
-    <img width="549" alt="image" src="https://github.com/user-attachments/assets/8c1730b1-6377-45fe-822e-4edf5fca2b4f">
+   <img width="549" alt="image" src="https://github.com/user-attachments/assets/8c1730b1-6377-45fe-822e-4edf5fca2b4f">
 
-    Once a primary Node.js project is confirmed, it is added to a project list that will undergo further processing. For each valid project, the system parses the package.json file to retrieve a list of dependencies along with their versions, which are then cross-checked for known vulnerabilities using npm audit. This tool provides detailed reports of vulnerabilities, including severity levels and recommended updates, which are recorded for later analysis and remediation.
+   Once a primary Node.js project is confirmed, it is added to a project list that will undergo further processing. For each valid project, the system parses the package.json file to retrieve a list of dependencies along with their versions, which are then cross-checked for known vulnerabilities using npm audit. This tool provides detailed reports of vulnerabilities, including severity levels and recommended updates, which are recorded for later analysis and remediation.
 
 2. Python Projects Detection
 
-    Finding virtual environments and looking for requirements.txt files in project directories are the two methods used to identify Python projects. This is Because the virtual environment functions as a separate Python environment and global libraries can't interfere with the identification of project-specific dependencies. To verify that a directory is a Python project, the detection script looks for the activate.sh file, which is frequently found in Python virtual environments.
+   Finding virtual environments and looking for requirements.txt files in project directories are the two methods used to identify Python projects. This is Because the virtual environment functions as a separate Python environment and global libraries can't interfere with the identification of project-specific dependencies. To verify that a directory is a Python project, the detection script looks for the activate.sh file, which is frequently found in Python virtual environments.
 
-    <img width="563" alt="image" src="https://github.com/user-attachments/assets/b7ea2fc4-d678-4f68-9cd0-6198cc4bafe3">
+   <img width="563" alt="image" src="https://github.com/user-attachments/assets/b7ea2fc4-d678-4f68-9cd0-6198cc4bafe3">
 
+   If there isn't a requirements.txt file, the system creates one by running the command pip freeze > requirements.txt and turning on the virtual environment. This script creates a record that is necessary for vulnerability research by capturing an exhaustive list of installed dependencies together with their particular versions. An organized list of dependencies is then created by parsing the requirements.txt file, whether it is generated or already exists.
 
-    If there isn't a requirements.txt file, the system creates one by running the command pip freeze > requirements.txt and turning on the virtual environment. This script creates a record that is necessary for vulnerability research by capturing an exhaustive list of installed dependencies together with their particular versions. An organized list of dependencies is then created by parsing the requirements.txt file, whether it is generated or already exists.
+3. System-Level Vulnerability Detection
+
+   The system vulnerability scanner provides comprehensive security analysis for both macOS and Linux systems. It performs the following checks:
+
+   - Package Manager Vulnerabilities:
+
+     - macOS: Checks Homebrew packages for outdated versions and security issues
+     - Linux: Checks APT and YUM packages for security updates and broken dependencies
+
+   - Global Package Vulnerabilities:
+
+     - Python packages installed system-wide
+     - Node.js packages installed globally
+
+   - System Security:
+     - Firewall status and configuration
+     - Antivirus presence and status
+     - Common security tool checks
+
+   The scanner generates detailed reports in JSON format, including:
+
+   - Package names and versions
+   - Security issues and their severity levels
+   - System information and scan timestamps
+   - Recommendations for remediation
+
+   To run the system vulnerability scanner:
+
+   ```bash
+   # Make sure you're in the project directory
+   cd software-inventory-api
+
+   # Run the scanner
+   python scripts/system_vulnerabilities.py
+   ```
+
+   Note: Some checks may require sudo privileges on Linux systems. The scanner will automatically detect the operating system and run appropriate checks.
 
 ## Installation Guide
 
@@ -45,10 +82,13 @@ pip install -r requirements.txt
 ```
 
 3. Create .env file
+
 ```
 touch .env
 ```
+
 4. Add environment vairables (Get the key from [NVD_Key](https://nvd.nist.gov/developers/request-an-api-key) or Contact for the key)
+
 ```
 API_KEY=...
 ```
@@ -58,4 +98,3 @@ API_KEY=...
 ```
 uvicorn main:app --reload
 ```
-

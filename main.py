@@ -58,24 +58,3 @@ def node_environments():
     except subprocess.CalledProcessError:
         return {"message": "Script execution failed."}
 
-
-# @app.get("/vulnerabilities")
-# async def get_vulnerabilities(name: str, version: str):
-#     try:
-#         url = f"https://services.nvd.nist.gov/rest/json/cves/1.0?cpeMatchString=cpe%3A2.3%3Aa%3A%3A{name}%3A{version}&resultsPerPage=10"
-#         headers = {
-#             "Content-Type": "application/json",
-#             "apiKey": os.getenv("API_KEY")
-#         }
-
-#         response = requests.get(url, headers=headers)
-#         response.raise_for_status()
-
-#         data = response.json()
-#         if data["totalResults"] > 0:
-#             return data
-
-#     except requests.exceptions.RequestException as e:
-#         print(f"Request exception: {e}")
-
-#     return {"message": "No vulnerabilities found."}
