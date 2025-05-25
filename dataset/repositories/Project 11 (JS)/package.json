@@ -1,0 +1,15 @@
+{
+  "name": "project-11-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 11 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@nestjs/core": "7.6.15",
+    "rxjs": "6.6.7",
+    "typeorm": "0.2.45"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "project-13-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 13 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "apollo-server": "2.25.0",
+    "graphql": "15.5.1",
+    "graphql-tools": "7.0.0"
+  }
+}

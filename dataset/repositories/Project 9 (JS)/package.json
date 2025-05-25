@@ -1,0 +1,15 @@
+{
+  "name": "project-9-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 9 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "electron": "11.5.0",
+    "chokidar": "3.5.2",
+    "node-notifier": "9.0.1"
+  }
+}

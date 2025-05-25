@@ -1,0 +1,15 @@
+{
+  "name": "project-6-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 6 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mongodb": "3.6.9",
+    "react-scripts": "4.0.3",
+    "passport": "0.5.0"
+  }
+}

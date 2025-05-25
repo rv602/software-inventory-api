@@ -1,0 +1,15 @@
+{
+  "name": "project-12-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 12 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "vuex": "3.6.2",
+    "vue-router": "3.5.2",
+    "pinia": "2.0.0"
+  }
+}

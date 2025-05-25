@@ -1,0 +1,15 @@
+{
+  "name": "project-4-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 4 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "socket.io": "2.4.0",
+    "mongoose": "5.12.0",
+    "bcrypt": "5.0.1"
+  }
+}

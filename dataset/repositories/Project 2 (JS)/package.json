@@ -1,0 +1,15 @@
+{
+  "name": "project-2-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 2 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "next": "10.0.5",
+    "react": "17.0.1",
+    "webpack": "4.46.0"
+  }
+}

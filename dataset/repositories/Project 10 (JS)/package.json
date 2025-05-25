@@ -1,0 +1,15 @@
+{
+  "name": "project-10-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 10 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "svelte": "3.44.0",
+    "rollup": "2.60.0",
+    "vite": "2.9.0"
+  }
+}

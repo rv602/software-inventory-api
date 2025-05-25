@@ -1,0 +1,15 @@
+{
+  "name": "project-16-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 16 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "tar": "6.1.0",
+    "yargs": "16.2.0",
+    "minimist": "1.2.5"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "project-19-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 19 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "d3": "7.0.0",
+    "chart.js": "3.7.0",
+    "moment": "2.29.1"
+  }
+}

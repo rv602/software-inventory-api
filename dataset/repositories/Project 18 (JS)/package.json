@@ -1,0 +1,15 @@
+{
+  "name": "project-18-(js)",
+  "version": "1.0.0",
+  "description": "Sample Project 18 (JS) project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "storybook": "6.4.0",
+    "postcss": "8.4.0",
+    "sass": "1.49.0"
+  }
+}
