@@ -8,16 +8,50 @@ import time
 import gzip
 from typing import Dict, List, Optional
 import sys
+import psutil
+import distro
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from constants import log_dir
-from constants import db_url_prod, db_url_dev, db_name, collection_system_name
 
 class SystemVulnerabilityScanner:
     def __init__(self):
         self.system = platform.system()
         self.vulnerabilities = []
         self.start_time = time.time()
+        self.system_info = self._get_system_info()
+
+    def _get_system_info(self) -> Dict:
+        """Gather detailed system information using psutil and distro."""
+        info = {
+            "platform": platform.platform(),
+            "python_version": platform.python_version(),
+            "cpu_count": psutil.cpu_count(),
+            "memory_total": psutil.virtual_memory().total,
+            "memory_available": psutil.virtual_memory().available,
+            "disk_usage": {
+                mount.mountpoint: {
+                    "total": mount.total,
+                    "used": mount.used,
+                    "free": mount.free
+                }
+                for mount in psutil.disk_partitions()
+                if mount.mountpoint in ['/', '/home', '/Users']
+            }
+        }
+
+        if self.system == "Linux":
+            info.update({
+                "distribution": distro.name(True),
+                "version": distro.version(),
+                "codename": distro.codename()
+            })
+        elif self.system == "Darwin":
+            info.update({
+                "mac_version": platform.mac_ver()[0]
+            })
+
+        return info
 
     def run_command(self, cmd: str) -> Optional[str]:
         try:
@@ -206,6 +240,7 @@ class SystemVulnerabilityScanner:
             "System": self.system,
             "Hostname": platform.node(),
             "ScanTime": datetime.utcnow().isoformat(),
+            "SystemInfo": self.system_info,
             "Vulnerabilities": all_vulnerabilities
         }
 
