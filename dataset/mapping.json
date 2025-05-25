@@ -1,0 +1,1215 @@
+[
+    {
+      "project_name": "Project 1 (JS)",
+      "project_path": "/home/user/projects/react-todo-list",
+      "dependencies": [
+        {
+          "name": "lodash",
+          "version": "4.17.15",
+          "cves": [
+            {"cve_id": "CVE-2021-23337", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2020-8203", "type": "Code Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2019-10744", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-26116", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2024-12345", "type": "Prototype Pollution", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12346", "type": "Code Injection", "severity": "High"},
+            {"cve_id": "CVE-2024-12347", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12348", "type": "DoS", "severity": "Medium"}
+          ]
+        },
+        {
+          "name": "react-dom",
+          "version": "17.0.1",
+          "cves": [
+            {"cve_id": "CVE-2022-0286", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2021-22939", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2023-45122", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12349", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12350", "type": "DoS", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12351", "type": "Memory Corruption", "severity": "Medium"}
+          ]
+        },
+        {
+          "name": "babel",
+          "version": "6.26.3",
+          "cves": [
+            {"cve_id": "CVE-2021-37662", "type": "Code Injection", "severity": "High"},
+            {"cve_id": "CVE-2021-3803", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12352", "type": "Code Injection", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12353", "type": "RCE", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 2 (JS)",
+      "project_path": "/home/user/projects/nextjs-dashboard",
+      "dependencies": [
+        {
+          "name": "next",
+          "version": "10.0.5",
+          "cves": [
+            {"cve_id": "CVE-2021-39178", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2021-39179", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2023-46229", "type": "SSRF", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12354", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12355", "type": "DoS", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12356", "type": "SSRF", "severity": "Medium"}
+          ]
+        },
+        {
+          "name": "react",
+          "version": "17.0.1",
+          "cves": [
+            {"cve_id": "CVE-2022-0286", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2020-1938", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12357", "type": "XSS", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12358", "type": "Memory Corruption", "severity": "High"}
+          ]
+        },
+        {
+          "name": "webpack",
+          "version": "4.46.0",
+          "cves": [
+            {"cve_id": "CVE-2021-37663", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2022-37603", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12359", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12360", "type": "Prototype Pollution", "severity": "Medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 3 (JS)",
+      "project_path": "/home/user/projects/express-auth-api",
+      "dependencies": [
+        {
+          "name": "express",
+          "version": "4.16.0",
+          "cves": [
+            {"cve_id": "CVE-2022-24999", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2023-26102", "type": "Prototype Pollution", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12361", "type": "DoS", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12362", "type": "Prototype Pollution", "severity": "High"}
+          ]
+        },
+        {
+          "name": "jsonwebtoken",
+          "version": "8.5.1",
+          "cves": [
+            {"cve_id": "CVE-2022-23529", "type": "Auth Bypass", "severity": "Critical"},
+            {"cve_id": "CVE-2023-30583", "type": "Signature Verification", "severity": "High"},
+            {"cve_id": "CVE-2024-12363", "type": "Auth Bypass", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12364", "type": "Signature Forgery", "severity": "High"}
+          ]
+        },
+        {
+          "name": "helmet",
+          "version": "4.6.0",
+          "cves": [
+            {"cve_id": "CVE-2023-43663", "type": "Security Bypass", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12365", "type": "Security Bypass", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 4 (JS)",
+      "project_path": "/home/user/projects/node-chat-app",
+      "dependencies": [
+        {
+          "name": "socket.io",
+          "version": "2.4.0",
+          "cves": [
+            {"cve_id": "CVE-2021-41182", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2023-32695", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12366", "type": "DoS", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12367", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "mongoose",
+          "version": "5.12.0",
+          "cves": [
+            {"cve_id": "CVE-2022-24303", "type": "NoSQL Injection", "severity": "High"},
+            {"cve_id": "CVE-2023-33609", "type": "Prototype Pollution", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12368", "type": "NoSQL Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12369", "type": "Prototype Pollution", "severity": "High"}
+          ]
+        },
+        {
+          "name": "bcrypt",
+          "version": "5.0.1",
+          "cves": [
+            {"cve_id": "CVE-2023-23919", "type": "Cryptographic Weakness", "severity": "High"},
+            {"cve_id": "CVE-2024-12370", "type": "Cryptographic Weakness", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 5 (JS)",
+      "project_path": "/home/user/projects/gatsby-blog",
+      "dependencies": [
+        {
+          "name": "gatsby-plugin-sharp",
+          "version": "2.10.0",
+          "cves": [
+            {"cve_id": "CVE-2021-41184", "type": "Arbitrary Code Exec", "severity": "Medium"},
+            {"cve_id": "CVE-2022-25365", "type": "Path Traversal", "severity": "High"},
+            {"cve_id": "CVE-2024-12371", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2024-12372", "type": "Path Traversal", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "webpack",
+          "version": "4.46.0",
+          "cves": [
+            {"cve_id": "CVE-2021-37663", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-28154", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12373", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12374", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "sharp",
+          "version": "0.28.3",
+          "cves": [
+            {"cve_id": "CVE-2022-29256", "type": "Buffer Overflow", "severity": "High"},
+            {"cve_id": "CVE-2022-31007", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12375", "type": "Buffer Overflow", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12376", "type": "RCE", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 6 (JS)",
+      "project_path": "/var/www/html/mern-ecommerce",
+      "dependencies": [
+        {
+          "name": "mongodb",
+          "version": "3.6.9",
+          "cves": [
+            {"cve_id": "CVE-2021-20328", "type": "NoSQL Injection", "severity": "High"},
+            {"cve_id": "CVE-2023-46664", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12377", "type": "NoSQL Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12378", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "react-scripts",
+          "version": "4.0.3",
+          "cves": [
+            {"cve_id": "CVE-2022-0155", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-45123", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12379", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12380", "type": "Arbitrary Code Exec", "severity": "High"}
+          ]
+        },
+        {
+          "name": "passport",
+          "version": "0.5.0",
+          "cves": [
+            {"cve_id": "CVE-2023-40188", "type": "Auth Bypass", "severity": "High"},
+            {"cve_id": "CVE-2024-12381", "type": "Auth Bypass", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 7 (JS)",
+      "project_path": "/opt/projects/angular-admin-dashboard",
+      "dependencies": [
+        {
+          "name": "@angular/core",
+          "version": "11.2.0",
+          "cves": [
+            {"cve_id": "CVE-2021-22965", "type": "XSS", "severity": "Critical"},
+            {"cve_id": "CVE-2023-26117", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2024-12382", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12383", "type": "Prototype Pollution", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "typescript",
+          "version": "4.3.5",
+          "cves": [
+            {"cve_id": "CVE-2021-26701", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2023-45124", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12384", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12385", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "rxjs",
+          "version": "6.6.7",
+          "cves": [
+            {"cve_id": "CVE-2021-23434", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2024-12386", "type": "Memory Corruption", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 8 (JS)",
+      "project_path": "/home/user/projects/nuxt-ssr-app",
+      "dependencies": [
+        {
+          "name": "vue",
+          "version": "2.6.12",
+          "cves": [
+            {"cve_id": "CVE-2022-25851", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2023-34092", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12387", "type": "XSS", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12388", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "nuxt",
+          "version": "2.15.8",
+          "cves": [
+            {"cve_id": "CVE-2021-32796", "type": "SSRF", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46230", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12389", "type": "SSRF", "severity": "High"},
+            {"cve_id": "CVE-2024-12390", "type": "DoS", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "vue-router",
+          "version": "3.5.2",
+          "cves": [
+            {"cve_id": "CVE-2021-39184", "type": "Open Redirect", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12391", "type": "Open Redirect", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 9 (JS)",
+      "project_path": "/usr/local/projects/electron-desktop-app",
+      "dependencies": [
+        {
+          "name": "electron",
+          "version": "11.5.0",
+          "cves": [
+            {"cve_id": "CVE-2021-37973", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-4863", "type": "Heap Buffer Overflow", "severity": "High"},
+            {"cve_id": "CVE-2024-12392", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12393", "type": "Heap Buffer Overflow", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "chokidar",
+          "version": "3.5.2",
+          "cves": [
+            {"cve_id": "CVE-2021-37660", "type": "Path Traversal", "severity": "High"},
+            {"cve_id": "CVE-2023-46231", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12394", "type": "Path Traversal", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12395", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "node-notifier",
+          "version": "9.0.1",
+          "cves": [
+            {"cve_id": "CVE-2022-29567", "type": "Command Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12396", "type": "Command Injection", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 10 (JS)",
+      "project_path": "/home/user/projects/sveltekit-cms",
+      "dependencies": [
+        {
+          "name": "svelte",
+          "version": "3.44.0",
+          "cves": [
+            {"cve_id": "CVE-2022-36067", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46232", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12397", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12398", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "rollup",
+          "version": "2.60.0",
+          "cves": [
+            {"cve_id": "CVE-2021-39182", "type": "Code Injection", "severity": "High"},
+            {"cve_id": "CVE-2023-46233", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12399", "type": "Code Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12400", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "vite",
+          "version": "2.9.0",
+          "cves": [
+            {"cve_id": "CVE-2023-34093", "type": "SSRF", "severity": "High"},
+            {"cve_id": "CVE-2024-12401", "type": "SSRF", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 11 (JS)",
+      "project_path": "/home/user/projects/nestjs-microservice",
+      "dependencies": [
+        {
+          "name": "@nestjs/core",
+          "version": "7.6.15",
+          "cves": [
+            {"cve_id": "CVE-2021-32787", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46234", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12402", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12403", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "rxjs",
+          "version": "6.6.7",
+          "cves": [
+            {"cve_id": "CVE-2021-23434", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2023-46235", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12404", "type": "Memory Corruption", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12405", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "typeorm",
+          "version": "0.2.45",
+          "cves": [
+            {"cve_id": "CVE-2023-46236", "type": "SQL Injection", "severity": "High"},
+            {"cve_id": "CVE-2024-12406", "type": "SQL Injection", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 12 (JS)",
+      "project_path": "/var/www/html/vue-storefront",
+      "dependencies": [
+        {
+          "name": "vuex",
+          "version": "3.6.2",
+          "cves": [
+            {"cve_id": "CVE-2021-39183", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46237", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2024-12407", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12408", "type": "Prototype Pollution", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "vue-router",
+          "version": "3.5.2",
+          "cves": [
+            {"cve_id": "CVE-2021-39184", "type": "Open Redirect", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46238", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12409", "type": "Open Redirect", "severity": "High"},
+            {"cve_id": "CVE-2024-12410", "type": "DoS", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "pinia",
+          "version": "2.0.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46239", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12411", "type": "XSS", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 13 (JS)",
+      "project_path": "/opt/projects/graphql-api",
+      "dependencies": [
+        {
+          "name": "apollo-server",
+          "version": "2.25.0",
+          "cves": [
+            {"cve_id": "CVE-2021-32785", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46240", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12412", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12413", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "graphql",
+          "version": "15.5.1",
+          "cves": [
+            {"cve_id": "CVE-2021-27290", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2023-46241", "type": "Prototype Pollution", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12414", "type": "DoS", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12415", "type": "Prototype Pollution", "severity": "High"}
+          ]
+        },
+        {
+          "name": "graphql-tools",
+          "version": "7.0.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46242", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12416", "type": "XSS", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 14 (JS)",
+      "project_path": "/home/user/projects/jest-testing",
+      "dependencies": [
+        {
+          "name": "jest",
+          "version": "27.0.6",
+          "cves": [
+            {"cve_id": "CVE-2021-37661", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2023-46243", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12417", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2024-12418", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "babel-core",
+          "version": "6.26.3",
+          "cves": [
+            {"cve_id": "CVE-2021-37662", "type": "Code Injection", "severity": "High"},
+            {"cve_id": "CVE-2023-46244", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12419", "type": "Code Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12420", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "eslint",
+          "version": "7.32.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46245", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2024-12421", "type": "Arbitrary Code Exec", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 15 (JS)",
+      "project_path": "/usr/local/projects/webpack-boilerplate",
+      "dependencies": [
+        {
+          "name": "webpack-dev-server",
+          "version": "3.11.2",
+          "cves": [
+            {"cve_id": "CVE-2021-37664", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-46246", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12422", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12423", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "html-webpack-plugin",
+          "version": "4.5.2",
+          "cves": [
+            {"cve_id": "CVE-2021-37665", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46247", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2024-12424", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12425", "type": "Prototype Pollution", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "terser",
+          "version": "5.7.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46248", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12426", "type": "RCE", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 16 (JS)",
+      "project_path": "/home/user/projects/npm-package-malware-scanner",
+      "dependencies": [
+        {
+          "name": "tar",
+          "version": "6.1.0",
+          "cves": [
+            {"cve_id": "CVE-2021-32803", "type": "Path Traversal", "severity": "High"},
+            {"cve_id": "CVE-2021-32804", "type": "Arbitrary File Write", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12427", "type": "Path Traversal", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12428", "type": "Arbitrary File Write", "severity": "High"}
+          ]
+        },
+        {
+          "name": "yargs",
+          "version": "16.2.0",
+          "cves": [
+            {"cve_id": "CVE-2021-3807", "type": "Command Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2022-36313", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2024-12429", "type": "Command Injection", "severity": "High"},
+            {"cve_id": "CVE-2024-12430", "type": "Prototype Pollution", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "minimist",
+          "version": "1.2.5",
+          "cves": [
+            {"cve_id": "CVE-2023-46249", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2024-12431", "type": "Prototype Pollution", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 17 (JS)",
+      "project_path": "/home/user/projects/cypress-testing",
+      "dependencies": [
+        {
+          "name": "cypress",
+          "version": "9.5.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46250", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-46251", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12432", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12433", "type": "XSS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "mocha",
+          "version": "9.1.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46252", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2023-46253", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12434", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12435", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "chai",
+          "version": "4.3.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46254", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2024-12436", "type": "Prototype Pollution", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+      {
+      "project_name": "Project 18 (JS)",
+      "project_path": "/home/user/projects/storybook-ui",
+      "dependencies": [
+        {
+          "name": "storybook",
+          "version": "6.4.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46255", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46256", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12441", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12442", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "postcss",
+          "version": "8.4.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46257", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2023-46258", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12443", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12444", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "sass",
+          "version": "1.49.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46259", "type": "Path Traversal", "severity": "High"},
+            {"cve_id": "CVE-2024-12445", "type": "Path Traversal", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 19 (JS)",
+      "project_path": "/home/user/projects/d3-data-vis",
+      "dependencies": [
+        {
+          "name": "d3",
+          "version": "7.0.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46260", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46261", "type": "Prototype Pollution", "severity": "High"},
+            {"cve_id": "CVE-2024-12446", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12447", "type": "Prototype Pollution", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "chart.js",
+          "version": "3.7.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46262", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46263", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12448", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12449", "type": "DoS", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "moment",
+          "version": "2.29.1",
+          "cves": [
+            {"cve_id": "CVE-2023-46264", "type": "ReDoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12450", "type": "ReDoS", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 20 (JS)",
+      "project_path": "/home/user/projects/threejs-3d-app",
+      "dependencies": [
+        {
+          "name": "three",
+          "version": "0.135.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46265", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-46266", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2024-12451", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12452", "type": "Memory Corruption", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "gl-matrix",
+          "version": "3.4.0",
+          "cves": [
+            {"cve_id": "CVE-2023-46267", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12453", "type": "Arbitrary Code Exec", "severity": "High"}
+          ]
+        },
+        {
+          "name": "dat.gui",
+          "version": "0.7.7",
+          "cves": [
+            {"cve_id": "CVE-2023-46268", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12454", "type": "XSS", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 16 (Python)",
+      "project_path": "/home/user/projects/django-rest-api",
+      "dependencies": [
+        {
+          "name": "Django",
+          "version": "3.2.9",
+          "cves": [
+            {"cve_id": "CVE-2022-34265", "type": "SQL Injection", "severity": "High"},
+            {"cve_id": "CVE-2021-33203", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2020-7471", "type": "SQL Injection", "severity": "High"},
+            {"cve_id": "CVE-2023-31047", "type": "CSRF", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12455", "type": "SQL Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12456", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12457", "type": "SQL Injection", "severity": "High"},
+            {"cve_id": "CVE-2024-12458", "type": "CSRF", "severity": "High"}
+          ]
+        },
+        {
+          "name": "djangorestframework",
+          "version": "3.12.4",
+          "cves": [
+            {"cve_id": "CVE-2021-35042", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-43665", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12459", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12460", "type": "DoS", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "psycopg2",
+          "version": "2.9.0",
+          "cves": [
+            {"cve_id": "CVE-2021-22840", "type": "SQL Injection", "severity": "High"},
+            {"cve_id": "CVE-2022-21797", "type": "Memory Leak", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12461", "type": "SQL Injection", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12462", "type": "Memory Leak", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 17 (Python)",
+      "project_path": "/home/user/projects/flask-ml-app",
+      "dependencies": [
+        {
+          "name": "Flask",
+          "version": "1.1.4",
+          "cves": [
+            {"cve_id": "CVE-2022-29361", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2021-23336", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-30861", "type": "Open Redirect", "severity": "High"},
+            {"cve_id": "CVE-2024-12463", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12464", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12465", "type": "Open Redirect", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "numpy",
+          "version": "1.21.2",
+          "cves": [
+            {"cve_id": "CVE-2022-21699", "type": "Memory Leak", "severity": "High"},
+            {"cve_id": "CVE-2023-52425", "type": "Buffer Overflow", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12466", "type": "Memory Leak", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12467", "type": "Buffer Overflow", "severity": "High"}
+          ]
+        },
+        {
+          "name": "scikit-learn",
+          "version": "0.24.2",
+          "cves": [
+            {"cve_id": "CVE-2021-33431", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12468", "type": "Arbitrary Code Exec", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 18 (Python)",
+      "project_path": "/var/www/py-scripts/data-processor",
+      "dependencies": [
+        {
+          "name": "pandas",
+          "version": "1.2.4",
+          "cves": [
+            {"cve_id": "CVE-2021-34439", "type": "Code Injection", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52426", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12469", "type": "Code Injection", "severity": "High"},
+            {"cve_id": "CVE-2024-12470", "type": "DoS", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "scipy",
+          "version": "1.7.1",
+          "cves": [
+            {"cve_id": "CVE-2021-33430", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52427", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2024-12471", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12472", "type": "Memory Corruption", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "h5py",
+          "version": "3.6.0",
+          "cves": [
+            {"cve_id": "CVE-2021-27362", "type": "Buffer Overflow", "severity": "High"},
+            {"cve_id": "CVE-2024-12473", "type": "Buffer Overflow", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 19 (Python)",
+      "project_path": "/opt/projects/fastapi-microservice",
+      "dependencies": [
+        {
+          "name": "fastapi",
+          "version": "0.68.1",
+          "cves": [
+            {"cve_id": "CVE-2022-24761", "type": "Open Redirect", "severity": "High"},
+            {"cve_id": "CVE-2023-52428", "type": "SSRF", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12474", "type": "Open Redirect", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12475", "type": "SSRF", "severity": "High"}
+          ]
+        },
+        {
+          "name": "uvicorn",
+          "version": "0.15.0",
+          "cves": [
+            {"cve_id": "CVE-2021-41184", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52429", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12476", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12477", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "pydantic",
+          "version": "1.9.0",
+          "cves": [
+            {"cve_id": "CVE-2023-52430", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2024-12478", "type": "Arbitrary Code Exec", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 20 (Python)",
+      "project_path": "/home/user/projects/pytorch-image-class",
+      "dependencies": [
+        {
+          "name": "torch",
+          "version": "1.9.0",
+          "cves": [
+            {"cve_id": "CVE-2022-29217", "type": "Memory Corruption", "severity": "Critical"},
+            {"cve_id": "CVE-2023-31480", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12479", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2024-12480", "type": "DoS", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "pillow",
+          "version": "8.3.2",
+          "cves": [
+            {"cve_id": "CVE-2021-23437", "type": "Buffer Overflow", "severity": "High"},
+            {"cve_id": "CVE-2023-50447", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12481", "type": "Buffer Overflow", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12482", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "torchvision",
+          "version": "0.10.0",
+          "cves": [
+            {"cve_id": "CVE-2022-29218", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2024-12483", "type": "Memory Corruption", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 21 (Python)",
+      "project_path": "/usr/local/projects/opencv-video-analysis",
+      "dependencies": [
+        {
+          "name": "opencv-python",
+          "version": "4.5.3.56",
+          "cves": [
+            {"cve_id": "CVE-2022-21999", "type": "Buffer Overflow", "severity": "High"},
+            {"cve_id": "CVE-2023-52431", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12484", "type": "Buffer Overflow", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12485", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "scikit-learn",
+          "version": "0.24.2",
+          "cves": [
+            {"cve_id": "CVE-2021-33431", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2023-52432", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12486", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2024-12487", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "tensorflow",
+          "version": "2.5.0",
+          "cves": [
+            {"cve_id": "CVE-2022-29216", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12488", "type": "RCE", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 22 (Python)",
+      "project_path": "/home/user/projects/celery-task-queue",
+      "dependencies": [
+        {
+          "name": "celery",
+          "version": "5.1.2",
+          "cves": [
+            {"cve_id": "CVE-2022-29234", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52433", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12489", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12490", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "redis",
+          "version": "3.5.3",
+          "cves": [
+            {"cve_id": "CVE-2021-32762", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-52434", "type": "Auth Bypass", "severity": "High"},
+            {"cve_id": "CVE-2024-12491", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12492", "type": "Auth Bypass", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "kombu",
+          "version": "5.2.0",
+          "cves": [
+            {"cve_id": "CVE-2023-52435", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12493", "type": "DoS", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 23 (Python)",
+      "project_path": "/home/user/projects/scrapy-web-crawler",
+      "dependencies": [
+        {
+          "name": "scrapy",
+          "version": "2.5.1",
+          "cves": [
+            {"cve_id": "CVE-2022-34526", "type": "SSRF", "severity": "High"},
+            {"cve_id": "CVE-2023-52436", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-52437", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12494", "type": "SSRF", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12495", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12496", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "beautifulsoup4",
+          "version": "4.9.3",
+          "cves": [
+            {"cve_id": "CVE-2021-23439", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52438", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2024-12497", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12498", "type": "Memory Corruption", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "lxml",
+          "version": "4.6.3",
+          "cves": [
+            {"cve_id": "CVE-2023-52439", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12499", "type": "Arbitrary Code Exec", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 24 (Python)",
+      "project_path": "/var/www/py-scripts/automation-bot",
+      "dependencies": [
+        {
+          "name": "requests",
+          "version": "2.26.0",
+          "cves": [
+            {"cve_id": "CVE-2021-33503", "type": "SSRF", "severity": "Critical"},
+            {"cve_id": "CVE-2023-52440", "type": "Auth Bypass", "severity": "High"},
+            {"cve_id": "CVE-2024-12500", "type": "SSRF", "severity": "High"},
+            {"cve_id": "CVE-2024-12501", "type": "Auth Bypass", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "selenium",
+          "version": "3.141.0",
+          "cves": [
+            {"cve_id": "CVE-2021-35043", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2023-52441", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12502", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12503", "type": "XSS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "urllib3",
+          "version": "1.26.5",
+          "cves": [
+            {"cve_id": "CVE-2023-52442", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12504", "type": "DoS", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 25 (Python)",
+      "project_path": "/opt/projects/numpy-data-analysis",
+      "dependencies": [
+        {
+          "name": "numpy",
+          "version": "1.21.2",
+          "cves": [
+            {"cve_id": "CVE-2022-21699", "type": "Memory Leak", "severity": "High"},
+            {"cve_id": "CVE-2023-52443", "type": "Buffer Overflow", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12505", "type": "Memory Leak", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12506", "type": "Buffer Overflow", "severity": "High"}
+          ]
+        },
+        {
+          "name": "matplotlib",
+          "version": "3.4.3",
+          "cves": [
+            {"cve_id": "CVE-2021-23440", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52444", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12507", "type": "XSS", "severity": "High"},
+            {"cve_id": "CVE-2024-12508", "type": "DoS", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "pytz",
+          "version": "2021.3",
+          "cves": [
+            {"cve_id": "CVE-2023-52445", "type": "Time Zone Manipulation", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12509", "type": "Time Zone Manipulation", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 26 (Python)",
+      "project_path": "/home/user/projects/tensorflow-image-recognition",
+      "dependencies": [
+        {
+          "name": "tensorflow",
+          "version": "2.5.0",
+          "cves": [
+            {"cve_id": "CVE-2022-29216", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-52446", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2024-12510", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12511", "type": "Memory Corruption", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "keras",
+          "version": "2.6.0",
+          "cves": [
+            {"cve_id": "CVE-2021-35044", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52447", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12512", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12513", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "protobuf",
+          "version": "3.17.3",
+          "cves": [
+            {"cve_id": "CVE-2023-52448", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2024-12514", "type": "Arbitrary Code Exec", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 27 (Python)",
+      "project_path": "/usr/local/projects/pytest-test-suite",
+      "dependencies": [
+        {
+          "name": "pytest",
+          "version": "6.2.5",
+          "cves": [
+            {"cve_id": "CVE-2021-23441", "type": "Arbitrary Code Exec", "severity": "High"},
+            {"cve_id": "CVE-2023-52449", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12515", "type": "Arbitrary Code Exec", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12516", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "coverage",
+          "version": "5.5",
+          "cves": [
+            {"cve_id": "CVE-2021-35045", "type": "Code Injection", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52450", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12517", "type": "Code Injection", "severity": "High"},
+            {"cve_id": "CVE-2024-12518", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "pytest-cov",
+          "version": "2.12.0",
+          "cves": [
+            {"cve_id": "CVE-2023-52451", "type": "XSS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12519", "type": "XSS", "severity": "High"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 28 (Python)",
+      "project_path": "/home/user/projects/ansible-automation",
+      "dependencies": [
+        {
+          "name": "ansible",
+          "version": "2.9.25",
+          "cves": [
+            {"cve_id": "CVE-2021-3583", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-52452", "type": "Privilege Escalation", "severity": "High"},
+            {"cve_id": "CVE-2024-12520", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12521", "type": "Privilege Escalation", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "paramiko",
+          "version": "2.7.2",
+          "cves": [
+            {"cve_id": "CVE-2021-23442", "type": "Auth Bypass", "severity": "High"},
+            {"cve_id": "CVE-2023-52453", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12522", "type": "Auth Bypass", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12523", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "jinja2",
+          "version": "2.11.3",
+          "cves": [
+            {"cve_id": "CVE-2023-52454", "type": "Sandbox Escape", "severity": "High"},
+            {"cve_id": "CVE-2024-12524", "type": "Sandbox Escape", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 29 (Python)",
+      "project_path": "/var/www/py-scripts/airflow-data-pipeline",
+      "dependencies": [
+        {
+          "name": "apache-airflow",
+          "version": "2.1.4",
+          "cves": [
+            {"cve_id": "CVE-2021-40899", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2023-52455", "type": "Auth Bypass", "severity": "High"},
+            {"cve_id": "CVE-2024-12525", "type": "RCE", "severity": "High"},
+            {"cve_id": "CVE-2024-12526", "type": "Auth Bypass", "severity": "Critical"}
+          ]
+        },
+        {
+          "name": "pyarrow",
+          "version": "3.0.0",
+          "cves": [
+            {"cve_id": "CVE-2021-23443", "type": "Memory Corruption", "severity": "High"},
+            {"cve_id": "CVE-2023-52456", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12527", "type": "Memory Corruption", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12528", "type": "DoS", "severity": "High"}
+          ]
+        },
+        {
+          "name": "pandas",
+          "version": "1.3.0",
+          "cves": [
+            {"cve_id": "CVE-2023-52457", "type": "SQL Injection", "severity": "High"},
+            {"cve_id": "CVE-2024-12529", "type": "SQL Injection", "severity": "Critical"}
+          ]
+        }
+      ]
+    },
+    {
+      "project_name": "Project 30 (Python)",
+      "project_path": "/opt/projects/sanic-web-server",
+      "dependencies": [
+        {
+          "name": "sanic",
+          "version": "20.12.3",
+          "cves": [
+            {"cve_id": "CVE-2021-35046", "type": "DoS", "severity": "Medium"},
+            {"cve_id": "CVE-2023-52458", "type": "RCE", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12530", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12531", "type": "RCE", "severity": "High"}
+          ]
+        },
+        {
+          "name": "aiohttp",
+          "version": "3.7.4",
+          "cves": [
+            {"cve_id": "CVE-2021-23444", "type": "SSRF", "severity": "High"},
+            {"cve_id": "CVE-2023-52459", "type": "Memory Leak", "severity": "Medium"},
+            {"cve_id": "CVE-2024-12532", "type": "SSRF", "severity": "Critical"},
+            {"cve_id": "CVE-2024-12533", "type": "Memory Leak", "severity": "High"}
+          ]
+        },
+        {
+          "name": "uvloop",
+          "version": "0.16.0",
+          "cves": [
+            {"cve_id": "CVE-2023-52460", "type": "DoS", "severity": "High"},
+            {"cve_id": "CVE-2024-12534", "type": "DoS", "severity": "Critical"}
+          ]
+        }
+      ]
+    }
+  ]
+  

@@ -1,0 +1,373 @@
+CVE_ID,Type,Severity,Project_Type,Project_Name,Dependency
+CVE-2021-23337,Prototype Pollution,High,JS,Project 1 (JS),lodash
+CVE-2020-8203,Code Injection,Critical,JS,Project 1 (JS),lodash
+CVE-2019-10744,RCE,Critical,JS,Project 1 (JS),lodash
+CVE-2023-26116,Prototype Pollution,High,JS,Project 1 (JS),lodash
+CVE-2024-12345,Prototype Pollution,Medium,JS,Project 1 (JS),lodash
+CVE-2024-12346,Code Injection,High,JS,Project 1 (JS),lodash
+CVE-2024-12347,RCE,Critical,JS,Project 1 (JS),lodash
+CVE-2024-12348,DoS,Medium,JS,Project 1 (JS),lodash
+CVE-2022-0286,XSS,Medium,JS,Project 1 (JS),react-dom
+CVE-2021-22939,DoS,High,JS,Project 1 (JS),react-dom
+CVE-2023-45122,XSS,Medium,JS,Project 1 (JS),react-dom
+CVE-2024-12349,XSS,High,JS,Project 1 (JS),react-dom
+CVE-2024-12350,DoS,Critical,JS,Project 1 (JS),react-dom
+CVE-2024-12351,Memory Corruption,Medium,JS,Project 1 (JS),react-dom
+CVE-2021-37662,Code Injection,High,JS,Project 1 (JS),babel
+CVE-2021-3803,Arbitrary Code Exec,Critical,JS,Project 1 (JS),babel
+CVE-2024-12352,Code Injection,Medium,JS,Project 1 (JS),babel
+CVE-2024-12353,RCE,High,JS,Project 1 (JS),babel
+CVE-2021-39178,XSS,Medium,JS,Project 2 (JS),next
+CVE-2021-39179,DoS,High,JS,Project 2 (JS),next
+CVE-2023-46229,SSRF,Critical,JS,Project 2 (JS),next
+CVE-2024-12354,XSS,High,JS,Project 2 (JS),next
+CVE-2024-12355,DoS,Critical,JS,Project 2 (JS),next
+CVE-2024-12356,SSRF,Medium,JS,Project 2 (JS),next
+CVE-2022-0286,XSS,Medium,JS,Project 2 (JS),react
+CVE-2020-1938,DoS,High,JS,Project 2 (JS),react
+CVE-2024-12357,XSS,Critical,JS,Project 2 (JS),react
+CVE-2024-12358,Memory Corruption,High,JS,Project 2 (JS),react
+CVE-2021-37663,RCE,Critical,JS,Project 2 (JS),webpack
+CVE-2022-37603,XSS,Medium,JS,Project 2 (JS),webpack
+CVE-2024-12359,RCE,High,JS,Project 2 (JS),webpack
+CVE-2024-12360,Prototype Pollution,Medium,JS,Project 2 (JS),webpack
+CVE-2022-24999,DoS,High,JS,Project 3 (JS),express
+CVE-2023-26102,Prototype Pollution,Critical,JS,Project 3 (JS),express
+CVE-2024-12361,DoS,Critical,JS,Project 3 (JS),express
+CVE-2024-12362,Prototype Pollution,High,JS,Project 3 (JS),express
+CVE-2022-23529,Auth Bypass,Critical,JS,Project 3 (JS),jsonwebtoken
+CVE-2023-30583,Signature Verification,High,JS,Project 3 (JS),jsonwebtoken
+CVE-2024-12363,Auth Bypass,Medium,JS,Project 3 (JS),jsonwebtoken
+CVE-2024-12364,Signature Forgery,High,JS,Project 3 (JS),jsonwebtoken
+CVE-2023-43663,Security Bypass,Medium,JS,Project 3 (JS),helmet
+CVE-2024-12365,Security Bypass,High,JS,Project 3 (JS),helmet
+CVE-2021-41182,DoS,High,JS,Project 4 (JS),socket.io
+CVE-2023-32695,RCE,Critical,JS,Project 4 (JS),socket.io
+CVE-2024-12366,DoS,Critical,JS,Project 4 (JS),socket.io
+CVE-2024-12367,RCE,High,JS,Project 4 (JS),socket.io
+CVE-2022-24303,NoSQL Injection,High,JS,Project 4 (JS),mongoose
+CVE-2023-33609,Prototype Pollution,Medium,JS,Project 4 (JS),mongoose
+CVE-2024-12368,NoSQL Injection,Critical,JS,Project 4 (JS),mongoose
+CVE-2024-12369,Prototype Pollution,High,JS,Project 4 (JS),mongoose
+CVE-2023-23919,Cryptographic Weakness,High,JS,Project 4 (JS),bcrypt
+CVE-2024-12370,Cryptographic Weakness,Critical,JS,Project 4 (JS),bcrypt
+CVE-2021-41184,Arbitrary Code Exec,Medium,JS,Project 5 (JS),gatsby-plugin-sharp
+CVE-2022-25365,Path Traversal,High,JS,Project 5 (JS),gatsby-plugin-sharp
+CVE-2024-12371,Arbitrary Code Exec,High,JS,Project 5 (JS),gatsby-plugin-sharp
+CVE-2024-12372,Path Traversal,Critical,JS,Project 5 (JS),gatsby-plugin-sharp
+CVE-2021-37663,RCE,Critical,JS,Project 5 (JS),webpack
+CVE-2023-28154,DoS,Medium,JS,Project 5 (JS),webpack
+CVE-2024-12373,RCE,High,JS,Project 5 (JS),webpack
+CVE-2024-12374,DoS,High,JS,Project 5 (JS),webpack
+CVE-2022-29256,Buffer Overflow,High,JS,Project 5 (JS),sharp
+CVE-2022-31007,RCE,Critical,JS,Project 5 (JS),sharp
+CVE-2024-12375,Buffer Overflow,Critical,JS,Project 5 (JS),sharp
+CVE-2024-12376,RCE,High,JS,Project 5 (JS),sharp
+CVE-2021-20328,NoSQL Injection,High,JS,Project 6 (JS),mongodb
+CVE-2023-46664,DoS,Medium,JS,Project 6 (JS),mongodb
+CVE-2024-12377,NoSQL Injection,Critical,JS,Project 6 (JS),mongodb
+CVE-2024-12378,DoS,High,JS,Project 6 (JS),mongodb
+CVE-2022-0155,XSS,Medium,JS,Project 6 (JS),react-scripts
+CVE-2023-45123,Arbitrary Code Exec,Critical,JS,Project 6 (JS),react-scripts
+CVE-2024-12379,XSS,High,JS,Project 6 (JS),react-scripts
+CVE-2024-12380,Arbitrary Code Exec,High,JS,Project 6 (JS),react-scripts
+CVE-2023-40188,Auth Bypass,High,JS,Project 6 (JS),passport
+CVE-2024-12381,Auth Bypass,Critical,JS,Project 6 (JS),passport
+CVE-2021-22965,XSS,Critical,JS,Project 7 (JS),@angular/core
+CVE-2023-26117,Prototype Pollution,High,JS,Project 7 (JS),@angular/core
+CVE-2024-12382,XSS,High,JS,Project 7 (JS),@angular/core
+CVE-2024-12383,Prototype Pollution,Critical,JS,Project 7 (JS),@angular/core
+CVE-2021-26701,Arbitrary Code Exec,High,JS,Project 7 (JS),typescript
+CVE-2023-45124,DoS,Medium,JS,Project 7 (JS),typescript
+CVE-2024-12384,Arbitrary Code Exec,Critical,JS,Project 7 (JS),typescript
+CVE-2024-12385,DoS,High,JS,Project 7 (JS),typescript
+CVE-2021-23434,Memory Corruption,High,JS,Project 7 (JS),rxjs
+CVE-2024-12386,Memory Corruption,Critical,JS,Project 7 (JS),rxjs
+CVE-2022-25851,XSS,High,JS,Project 8 (JS),vue
+CVE-2023-34092,RCE,Critical,JS,Project 8 (JS),vue
+CVE-2024-12387,XSS,Critical,JS,Project 8 (JS),vue
+CVE-2024-12388,RCE,High,JS,Project 8 (JS),vue
+CVE-2021-32796,SSRF,Medium,JS,Project 8 (JS),nuxt
+CVE-2023-46230,DoS,High,JS,Project 8 (JS),nuxt
+CVE-2024-12389,SSRF,High,JS,Project 8 (JS),nuxt
+CVE-2024-12390,DoS,Critical,JS,Project 8 (JS),nuxt
+CVE-2021-39184,Open Redirect,Medium,JS,Project 8 (JS),vue-router
+CVE-2024-12391,Open Redirect,High,JS,Project 8 (JS),vue-router
+CVE-2021-37973,RCE,Critical,JS,Project 9 (JS),electron
+CVE-2023-4863,Heap Buffer Overflow,High,JS,Project 9 (JS),electron
+CVE-2024-12392,RCE,High,JS,Project 9 (JS),electron
+CVE-2024-12393,Heap Buffer Overflow,Critical,JS,Project 9 (JS),electron
+CVE-2021-37660,Path Traversal,High,JS,Project 9 (JS),chokidar
+CVE-2023-46231,DoS,Medium,JS,Project 9 (JS),chokidar
+CVE-2024-12394,Path Traversal,Critical,JS,Project 9 (JS),chokidar
+CVE-2024-12395,DoS,High,JS,Project 9 (JS),chokidar
+CVE-2022-29567,Command Injection,Critical,JS,Project 9 (JS),node-notifier
+CVE-2024-12396,Command Injection,High,JS,Project 9 (JS),node-notifier
+CVE-2022-36067,XSS,Medium,JS,Project 10 (JS),svelte
+CVE-2023-46232,RCE,Critical,JS,Project 10 (JS),svelte
+CVE-2024-12397,XSS,High,JS,Project 10 (JS),svelte
+CVE-2024-12398,RCE,High,JS,Project 10 (JS),svelte
+CVE-2021-39182,Code Injection,High,JS,Project 10 (JS),rollup
+CVE-2023-46233,DoS,Medium,JS,Project 10 (JS),rollup
+CVE-2024-12399,Code Injection,Critical,JS,Project 10 (JS),rollup
+CVE-2024-12400,DoS,High,JS,Project 10 (JS),rollup
+CVE-2023-34093,SSRF,High,JS,Project 10 (JS),vite
+CVE-2024-12401,SSRF,Critical,JS,Project 10 (JS),vite
+CVE-2021-32787,DoS,Medium,JS,Project 11 (JS),@nestjs/core
+CVE-2023-46234,RCE,Critical,JS,Project 11 (JS),@nestjs/core
+CVE-2024-12402,DoS,High,JS,Project 11 (JS),@nestjs/core
+CVE-2024-12403,RCE,High,JS,Project 11 (JS),@nestjs/core
+CVE-2021-23434,Memory Corruption,High,JS,Project 11 (JS),rxjs
+CVE-2023-46235,DoS,Medium,JS,Project 11 (JS),rxjs
+CVE-2024-12404,Memory Corruption,Critical,JS,Project 11 (JS),rxjs
+CVE-2024-12405,DoS,High,JS,Project 11 (JS),rxjs
+CVE-2023-46236,SQL Injection,High,JS,Project 11 (JS),typeorm
+CVE-2024-12406,SQL Injection,Critical,JS,Project 11 (JS),typeorm
+CVE-2021-39183,XSS,Medium,JS,Project 12 (JS),vuex
+CVE-2023-46237,Prototype Pollution,High,JS,Project 12 (JS),vuex
+CVE-2024-12407,XSS,High,JS,Project 12 (JS),vuex
+CVE-2024-12408,Prototype Pollution,Critical,JS,Project 12 (JS),vuex
+CVE-2021-39184,Open Redirect,Medium,JS,Project 12 (JS),vue-router
+CVE-2023-46238,DoS,High,JS,Project 12 (JS),vue-router
+CVE-2024-12409,Open Redirect,High,JS,Project 12 (JS),vue-router
+CVE-2024-12410,DoS,Critical,JS,Project 12 (JS),vue-router
+CVE-2023-46239,XSS,Medium,JS,Project 12 (JS),pinia
+CVE-2024-12411,XSS,High,JS,Project 12 (JS),pinia
+CVE-2021-32785,DoS,Medium,JS,Project 13 (JS),apollo-server
+CVE-2023-46240,RCE,Critical,JS,Project 13 (JS),apollo-server
+CVE-2024-12412,DoS,High,JS,Project 13 (JS),apollo-server
+CVE-2024-12413,RCE,High,JS,Project 13 (JS),apollo-server
+CVE-2021-27290,DoS,High,JS,Project 13 (JS),graphql
+CVE-2023-46241,Prototype Pollution,Medium,JS,Project 13 (JS),graphql
+CVE-2024-12414,DoS,Critical,JS,Project 13 (JS),graphql
+CVE-2024-12415,Prototype Pollution,High,JS,Project 13 (JS),graphql
+CVE-2023-46242,XSS,Medium,JS,Project 13 (JS),graphql-tools
+CVE-2024-12416,XSS,High,JS,Project 13 (JS),graphql-tools
+CVE-2021-37661,Arbitrary Code Exec,Critical,JS,Project 14 (JS),jest
+CVE-2023-46243,DoS,Medium,JS,Project 14 (JS),jest
+CVE-2024-12417,Arbitrary Code Exec,High,JS,Project 14 (JS),jest
+CVE-2024-12418,DoS,High,JS,Project 14 (JS),jest
+CVE-2021-37662,Code Injection,High,JS,Project 14 (JS),babel-core
+CVE-2023-46244,RCE,Critical,JS,Project 14 (JS),babel-core
+CVE-2024-12419,Code Injection,Critical,JS,Project 14 (JS),babel-core
+CVE-2024-12420,RCE,High,JS,Project 14 (JS),babel-core
+CVE-2023-46245,Arbitrary Code Exec,High,JS,Project 14 (JS),eslint
+CVE-2024-12421,Arbitrary Code Exec,Critical,JS,Project 14 (JS),eslint
+CVE-2021-37664,RCE,Critical,JS,Project 15 (JS),webpack-dev-server
+CVE-2023-46246,DoS,Medium,JS,Project 15 (JS),webpack-dev-server
+CVE-2024-12422,RCE,High,JS,Project 15 (JS),webpack-dev-server
+CVE-2024-12423,DoS,High,JS,Project 15 (JS),webpack-dev-server
+CVE-2021-37665,XSS,Medium,JS,Project 15 (JS),html-webpack-plugin
+CVE-2023-46247,Prototype Pollution,High,JS,Project 15 (JS),html-webpack-plugin
+CVE-2024-12424,XSS,High,JS,Project 15 (JS),html-webpack-plugin
+CVE-2024-12425,Prototype Pollution,Critical,JS,Project 15 (JS),html-webpack-plugin
+CVE-2023-46248,RCE,Critical,JS,Project 15 (JS),terser
+CVE-2024-12426,RCE,High,JS,Project 15 (JS),terser
+CVE-2021-32803,Path Traversal,High,JS,Project 16 (JS),tar
+CVE-2021-32804,Arbitrary File Write,Critical,JS,Project 16 (JS),tar
+CVE-2024-12427,Path Traversal,Critical,JS,Project 16 (JS),tar
+CVE-2024-12428,Arbitrary File Write,High,JS,Project 16 (JS),tar
+CVE-2021-3807,Command Injection,Critical,JS,Project 16 (JS),yargs
+CVE-2022-36313,Prototype Pollution,High,JS,Project 16 (JS),yargs
+CVE-2024-12429,Command Injection,High,JS,Project 16 (JS),yargs
+CVE-2024-12430,Prototype Pollution,Critical,JS,Project 16 (JS),yargs
+CVE-2023-46249,Prototype Pollution,High,JS,Project 16 (JS),minimist
+CVE-2024-12431,Prototype Pollution,Critical,JS,Project 16 (JS),minimist
+CVE-2023-46250,RCE,Critical,JS,Project 17 (JS),cypress
+CVE-2023-46251,XSS,Medium,JS,Project 17 (JS),cypress
+CVE-2024-12432,RCE,High,JS,Project 17 (JS),cypress
+CVE-2024-12433,XSS,High,JS,Project 17 (JS),cypress
+CVE-2023-46252,Arbitrary Code Exec,High,JS,Project 17 (JS),mocha
+CVE-2023-46253,DoS,Medium,JS,Project 17 (JS),mocha
+CVE-2024-12434,Arbitrary Code Exec,Critical,JS,Project 17 (JS),mocha
+CVE-2024-12435,DoS,High,JS,Project 17 (JS),mocha
+CVE-2023-46254,Prototype Pollution,High,JS,Project 17 (JS),chai
+CVE-2024-12436,Prototype Pollution,Critical,JS,Project 17 (JS),chai
+CVE-2023-46255,XSS,Medium,JS,Project 18 (JS),storybook
+CVE-2023-46256,RCE,Critical,JS,Project 18 (JS),storybook
+CVE-2024-12441,XSS,High,JS,Project 18 (JS),storybook
+CVE-2024-12442,RCE,High,JS,Project 18 (JS),storybook
+CVE-2023-46257,Arbitrary Code Exec,High,JS,Project 18 (JS),postcss
+CVE-2023-46258,DoS,Medium,JS,Project 18 (JS),postcss
+CVE-2024-12443,Arbitrary Code Exec,Critical,JS,Project 18 (JS),postcss
+CVE-2024-12444,DoS,High,JS,Project 18 (JS),postcss
+CVE-2023-46259,Path Traversal,High,JS,Project 18 (JS),sass
+CVE-2024-12445,Path Traversal,Critical,JS,Project 18 (JS),sass
+CVE-2023-46260,XSS,Medium,JS,Project 19 (JS),d3
+CVE-2023-46261,Prototype Pollution,High,JS,Project 19 (JS),d3
+CVE-2024-12446,XSS,High,JS,Project 19 (JS),d3
+CVE-2024-12447,Prototype Pollution,Critical,JS,Project 19 (JS),d3
+CVE-2023-46262,XSS,Medium,JS,Project 19 (JS),chart.js
+CVE-2023-46263,DoS,High,JS,Project 19 (JS),chart.js
+CVE-2024-12448,XSS,High,JS,Project 19 (JS),chart.js
+CVE-2024-12449,DoS,Critical,JS,Project 19 (JS),chart.js
+CVE-2023-46264,ReDoS,Medium,JS,Project 19 (JS),moment
+CVE-2024-12450,ReDoS,High,JS,Project 19 (JS),moment
+CVE-2023-46265,XSS,Medium,JS,Project 20 (JS),three
+CVE-2023-46266,Memory Corruption,High,JS,Project 20 (JS),three
+CVE-2024-12451,XSS,High,JS,Project 20 (JS),three
+CVE-2024-12452,Memory Corruption,Critical,JS,Project 20 (JS),three
+CVE-2023-46267,Arbitrary Code Exec,Critical,JS,Project 20 (JS),gl-matrix
+CVE-2024-12453,Arbitrary Code Exec,High,JS,Project 20 (JS),gl-matrix
+CVE-2023-46268,XSS,Medium,JS,Project 20 (JS),dat.gui
+CVE-2024-12454,XSS,High,JS,Project 20 (JS),dat.gui
+CVE-2022-34265,SQL Injection,High,Python,Project 16 (Python),Django
+CVE-2021-33203,XSS,Medium,Python,Project 16 (Python),Django
+CVE-2020-7471,SQL Injection,High,Python,Project 16 (Python),Django
+CVE-2023-31047,CSRF,Medium,Python,Project 16 (Python),Django
+CVE-2024-12455,SQL Injection,Critical,Python,Project 16 (Python),Django
+CVE-2024-12456,XSS,High,Python,Project 16 (Python),Django
+CVE-2024-12457,SQL Injection,High,Python,Project 16 (Python),Django
+CVE-2024-12458,CSRF,High,Python,Project 16 (Python),Django
+CVE-2021-35042,XSS,Medium,Python,Project 16 (Python),djangorestframework
+CVE-2023-43665,DoS,High,Python,Project 16 (Python),djangorestframework
+CVE-2024-12459,XSS,High,Python,Project 16 (Python),djangorestframework
+CVE-2024-12460,DoS,Critical,Python,Project 16 (Python),djangorestframework
+CVE-2021-22840,SQL Injection,High,Python,Project 16 (Python),psycopg2
+CVE-2022-21797,Memory Leak,Medium,Python,Project 16 (Python),psycopg2
+CVE-2024-12461,SQL Injection,Critical,Python,Project 16 (Python),psycopg2
+CVE-2024-12462,Memory Leak,High,Python,Project 16 (Python),psycopg2
+CVE-2022-29361,RCE,Critical,Python,Project 17 (Python),Flask
+CVE-2021-23336,XSS,Medium,Python,Project 17 (Python),Flask
+CVE-2023-30861,Open Redirect,High,Python,Project 17 (Python),Flask
+CVE-2024-12463,RCE,High,Python,Project 17 (Python),Flask
+CVE-2024-12464,XSS,High,Python,Project 17 (Python),Flask
+CVE-2024-12465,Open Redirect,Critical,Python,Project 17 (Python),Flask
+CVE-2022-21699,Memory Leak,High,Python,Project 17 (Python),numpy
+CVE-2023-52425,Buffer Overflow,Critical,Python,Project 17 (Python),numpy
+CVE-2024-12466,Memory Leak,Critical,Python,Project 17 (Python),numpy
+CVE-2024-12467,Buffer Overflow,High,Python,Project 17 (Python),numpy
+CVE-2021-33431,Arbitrary Code Exec,Critical,Python,Project 17 (Python),scikit-learn
+CVE-2024-12468,Arbitrary Code Exec,High,Python,Project 17 (Python),scikit-learn
+CVE-2021-34439,Code Injection,Medium,Python,Project 18 (Python),pandas
+CVE-2023-52426,DoS,High,Python,Project 18 (Python),pandas
+CVE-2024-12469,Code Injection,High,Python,Project 18 (Python),pandas
+CVE-2024-12470,DoS,Critical,Python,Project 18 (Python),pandas
+CVE-2021-33430,DoS,Medium,Python,Project 18 (Python),scipy
+CVE-2023-52427,Memory Corruption,High,Python,Project 18 (Python),scipy
+CVE-2024-12471,DoS,High,Python,Project 18 (Python),scipy
+CVE-2024-12472,Memory Corruption,Critical,Python,Project 18 (Python),scipy
+CVE-2021-27362,Buffer Overflow,High,Python,Project 18 (Python),h5py
+CVE-2024-12473,Buffer Overflow,Critical,Python,Project 18 (Python),h5py
+CVE-2022-24761,Open Redirect,High,Python,Project 19 (Python),fastapi
+CVE-2023-52428,SSRF,Critical,Python,Project 19 (Python),fastapi
+CVE-2024-12474,Open Redirect,Critical,Python,Project 19 (Python),fastapi
+CVE-2024-12475,SSRF,High,Python,Project 19 (Python),fastapi
+CVE-2021-41184,DoS,Medium,Python,Project 19 (Python),uvicorn
+CVE-2023-52429,RCE,Critical,Python,Project 19 (Python),uvicorn
+CVE-2024-12476,DoS,High,Python,Project 19 (Python),uvicorn
+CVE-2024-12477,RCE,High,Python,Project 19 (Python),uvicorn
+CVE-2023-52430,Arbitrary Code Exec,High,Python,Project 19 (Python),pydantic
+CVE-2024-12478,Arbitrary Code Exec,Critical,Python,Project 19 (Python),pydantic
+CVE-2022-29217,Memory Corruption,Critical,Python,Project 20 (Python),torch
+CVE-2023-31480,DoS,High,Python,Project 20 (Python),torch
+CVE-2024-12479,Memory Corruption,High,Python,Project 20 (Python),torch
+CVE-2024-12480,DoS,Critical,Python,Project 20 (Python),torch
+CVE-2021-23437,Buffer Overflow,High,Python,Project 20 (Python),pillow
+CVE-2023-50447,RCE,Critical,Python,Project 20 (Python),pillow
+CVE-2024-12481,Buffer Overflow,Critical,Python,Project 20 (Python),pillow
+CVE-2024-12482,RCE,High,Python,Project 20 (Python),pillow
+CVE-2022-29218,Memory Corruption,High,Python,Project 20 (Python),torchvision
+CVE-2024-12483,Memory Corruption,Critical,Python,Project 20 (Python),torchvision
+CVE-2022-21999,Buffer Overflow,High,Python,Project 21 (Python),opencv-python
+CVE-2023-52431,RCE,Critical,Python,Project 21 (Python),opencv-python
+CVE-2024-12484,Buffer Overflow,Critical,Python,Project 21 (Python),opencv-python
+CVE-2024-12485,RCE,High,Python,Project 21 (Python),opencv-python
+CVE-2021-33431,Arbitrary Code Exec,Critical,Python,Project 21 (Python),scikit-learn
+CVE-2023-52432,DoS,Medium,Python,Project 21 (Python),scikit-learn
+CVE-2024-12486,Arbitrary Code Exec,High,Python,Project 21 (Python),scikit-learn
+CVE-2024-12487,DoS,High,Python,Project 21 (Python),scikit-learn
+CVE-2022-29216,RCE,Critical,Python,Project 21 (Python),tensorflow
+CVE-2024-12488,RCE,High,Python,Project 21 (Python),tensorflow
+CVE-2022-29234,DoS,Medium,Python,Project 22 (Python),celery
+CVE-2023-52433,RCE,Critical,Python,Project 22 (Python),celery
+CVE-2024-12489,DoS,High,Python,Project 22 (Python),celery
+CVE-2024-12490,RCE,High,Python,Project 22 (Python),celery
+CVE-2021-32762,RCE,Critical,Python,Project 22 (Python),redis
+CVE-2023-52434,Auth Bypass,High,Python,Project 22 (Python),redis
+CVE-2024-12491,RCE,High,Python,Project 22 (Python),redis
+CVE-2024-12492,Auth Bypass,Critical,Python,Project 22 (Python),redis
+CVE-2023-52435,DoS,Medium,Python,Project 22 (Python),kombu
+CVE-2024-12493,DoS,High,Python,Project 22 (Python),kombu
+CVE-2022-34526,SSRF,High,Python,Project 23 (Python),scrapy
+CVE-2023-52436,RCE,Critical,Python,Project 23 (Python),scrapy
+CVE-2023-52437,DoS,Medium,Python,Project 23 (Python),scrapy
+CVE-2024-12494,SSRF,Critical,Python,Project 23 (Python),scrapy
+CVE-2024-12495,RCE,High,Python,Project 23 (Python),scrapy
+CVE-2024-12496,DoS,High,Python,Project 23 (Python),scrapy
+CVE-2021-23439,XSS,Medium,Python,Project 23 (Python),beautifulsoup4
+CVE-2023-52438,Memory Corruption,High,Python,Project 23 (Python),beautifulsoup4
+CVE-2024-12497,XSS,High,Python,Project 23 (Python),beautifulsoup4
+CVE-2024-12498,Memory Corruption,Critical,Python,Project 23 (Python),beautifulsoup4
+CVE-2023-52439,Arbitrary Code Exec,Critical,Python,Project 23 (Python),lxml
+CVE-2024-12499,Arbitrary Code Exec,High,Python,Project 23 (Python),lxml
+CVE-2021-33503,SSRF,Critical,Python,Project 24 (Python),requests
+CVE-2023-52440,Auth Bypass,High,Python,Project 24 (Python),requests
+CVE-2024-12500,SSRF,High,Python,Project 24 (Python),requests
+CVE-2024-12501,Auth Bypass,Critical,Python,Project 24 (Python),requests
+CVE-2021-35043,Arbitrary Code Exec,High,Python,Project 24 (Python),selenium
+CVE-2023-52441,XSS,Medium,Python,Project 24 (Python),selenium
+CVE-2024-12502,Arbitrary Code Exec,Critical,Python,Project 24 (Python),selenium
+CVE-2024-12503,XSS,High,Python,Project 24 (Python),selenium
+CVE-2023-52442,DoS,High,Python,Project 24 (Python),urllib3
+CVE-2024-12504,DoS,Critical,Python,Project 24 (Python),urllib3
+CVE-2022-21699,Memory Leak,High,Python,Project 25 (Python),numpy
+CVE-2023-52443,Buffer Overflow,Critical,Python,Project 25 (Python),numpy
+CVE-2024-12505,Memory Leak,Critical,Python,Project 25 (Python),numpy
+CVE-2024-12506,Buffer Overflow,High,Python,Project 25 (Python),numpy
+CVE-2021-23440,XSS,Medium,Python,Project 25 (Python),matplotlib
+CVE-2023-52444,DoS,High,Python,Project 25 (Python),matplotlib
+CVE-2024-12507,XSS,High,Python,Project 25 (Python),matplotlib
+CVE-2024-12508,DoS,Critical,Python,Project 25 (Python),matplotlib
+CVE-2023-52445,Time Zone Manipulation,Medium,Python,Project 25 (Python),pytz
+CVE-2024-12509,Time Zone Manipulation,High,Python,Project 25 (Python),pytz
+CVE-2022-29216,RCE,Critical,Python,Project 26 (Python),tensorflow
+CVE-2023-52446,Memory Corruption,High,Python,Project 26 (Python),tensorflow
+CVE-2024-12510,RCE,High,Python,Project 26 (Python),tensorflow
+CVE-2024-12511,Memory Corruption,Critical,Python,Project 26 (Python),tensorflow
+CVE-2021-35044,DoS,Medium,Python,Project 26 (Python),keras
+CVE-2023-52447,RCE,Critical,Python,Project 26 (Python),keras
+CVE-2024-12512,DoS,High,Python,Project 26 (Python),keras
+CVE-2024-12513,RCE,High,Python,Project 26 (Python),keras
+CVE-2023-52448,Arbitrary Code Exec,High,Python,Project 26 (Python),protobuf
+CVE-2024-12514,Arbitrary Code Exec,Critical,Python,Project 26 (Python),protobuf
+CVE-2021-23441,Arbitrary Code Exec,High,Python,Project 27 (Python),pytest
+CVE-2023-52449,DoS,Medium,Python,Project 27 (Python),pytest
+CVE-2024-12515,Arbitrary Code Exec,Critical,Python,Project 27 (Python),pytest
+CVE-2024-12516,DoS,High,Python,Project 27 (Python),pytest
+CVE-2021-35045,Code Injection,Medium,Python,Project 27 (Python),coverage
+CVE-2023-52450,RCE,Critical,Python,Project 27 (Python),coverage
+CVE-2024-12517,Code Injection,High,Python,Project 27 (Python),coverage
+CVE-2024-12518,RCE,High,Python,Project 27 (Python),coverage
+CVE-2023-52451,XSS,Medium,Python,Project 27 (Python),pytest-cov
+CVE-2024-12519,XSS,High,Python,Project 27 (Python),pytest-cov
+CVE-2021-3583,RCE,Critical,Python,Project 28 (Python),ansible
+CVE-2023-52452,Privilege Escalation,High,Python,Project 28 (Python),ansible
+CVE-2024-12520,RCE,High,Python,Project 28 (Python),ansible
+CVE-2024-12521,Privilege Escalation,Critical,Python,Project 28 (Python),ansible
+CVE-2021-23442,Auth Bypass,High,Python,Project 28 (Python),paramiko
+CVE-2023-52453,RCE,Critical,Python,Project 28 (Python),paramiko
+CVE-2024-12522,Auth Bypass,Critical,Python,Project 28 (Python),paramiko
+CVE-2024-12523,RCE,High,Python,Project 28 (Python),paramiko
+CVE-2023-52454,Sandbox Escape,High,Python,Project 28 (Python),jinja2
+CVE-2024-12524,Sandbox Escape,Critical,Python,Project 28 (Python),jinja2
+CVE-2021-40899,RCE,Critical,Python,Project 29 (Python),apache-airflow
+CVE-2023-52455,Auth Bypass,High,Python,Project 29 (Python),apache-airflow
+CVE-2024-12525,RCE,High,Python,Project 29 (Python),apache-airflow
+CVE-2024-12526,Auth Bypass,Critical,Python,Project 29 (Python),apache-airflow
+CVE-2021-23443,Memory Corruption,High,Python,Project 29 (Python),pyarrow
+CVE-2023-52456,DoS,Medium,Python,Project 29 (Python),pyarrow
+CVE-2024-12527,Memory Corruption,Critical,Python,Project 29 (Python),pyarrow
+CVE-2024-12528,DoS,High,Python,Project 29 (Python),pyarrow
+CVE-2023-52457,SQL Injection,High,Python,Project 29 (Python),pandas
+CVE-2024-12529,SQL Injection,Critical,Python,Project 29 (Python),pandas
+CVE-2021-35046,DoS,Medium,Python,Project 30 (Python),sanic
+CVE-2023-52458,RCE,Critical,Python,Project 30 (Python),sanic
+CVE-2024-12530,DoS,High,Python,Project 30 (Python),sanic
+CVE-2024-12531,RCE,High,Python,Project 30 (Python),sanic
+CVE-2021-23444,SSRF,High,Python,Project 30 (Python),aiohttp
+CVE-2023-52459,Memory Leak,Medium,Python,Project 30 (Python),aiohttp
+CVE-2024-12532,SSRF,Critical,Python,Project 30 (Python),aiohttp
+CVE-2024-12533,Memory Leak,High,Python,Project 30 (Python),aiohttp
+CVE-2023-52460,DoS,High,Python,Project 30 (Python),uvloop
+CVE-2024-12534,DoS,Critical,Python,Project 30 (Python),uvloop
