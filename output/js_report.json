@@ -1,0 +1,350 @@
+[
+  {
+    "project_name": "Project 1 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "lodash",
+        "old_version": "4.17.15",
+        "new_version": "4.17.21",
+        "details": "CVE-2021-22939: Prototype Pollution"
+      },
+      {
+        "name": "react-dom",
+        "old_version": "17.0.1",
+        "new_version": "18.2.0",
+        "details": "Multiple XSS and DoS vulnerabilities"
+      },
+      {
+        "name": "babel",
+        "old_version": "6.26.3",
+        "new_version": "7.23.9",
+        "details": "Multiple Code Injection and RCE vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 2 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "next",
+        "old_version": "10.0.5",
+        "new_version": "14.1.0",
+        "details": "Multiple XSS, DoS, and SSRF vulnerabilities"
+      },
+      {
+        "name": "react",
+        "old_version": "17.0.1",
+        "new_version": "18.2.0",
+        "details": "Multiple XSS and DoS vulnerabilities"
+      },
+      {
+        "name": "webpack",
+        "old_version": "4.46.0",
+        "new_version": "5.90.1",
+        "details": "Multiple RCE and XSS vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 3 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "express",
+        "old_version": "4.16.0",
+        "new_version": "4.18.2",
+        "details": "Multiple DoS and Prototype Pollution vulnerabilities"
+      },
+      {
+        "name": "jsonwebtoken",
+        "old_version": "8.5.1",
+        "new_version": "9.0.2",
+        "details": "Multiple Auth Bypass and Signature vulnerabilities"
+      },
+      {
+        "name": "helmet",
+        "old_version": "4.6.0",
+        "new_version": "7.1.0",
+        "details": "Multiple Security Bypass vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 4 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "socket.io",
+        "old_version": "2.4.0",
+        "new_version": "4.7.4",
+        "details": "Multiple DoS and RCE vulnerabilities"
+      },
+      {
+        "name": "mongoose",
+        "old_version": "5.12.0",
+        "new_version": "8.1.1",
+        "details": "Multiple NoSQL Injection and Prototype Pollution vulnerabilities"
+      },
+      {
+        "name": "bcrypt",
+        "old_version": "5.0.1",
+        "new_version": "5.1.1",
+        "details": "Multiple Cryptographic Weakness vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 5 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "gatsby-plugin-sharp",
+        "old_version": "2.10.0",
+        "new_version": "5.13.0",
+        "details": "Multiple Arbitrary Code Execution and Path Traversal vulnerabilities"
+      },
+      {
+        "name": "webpack",
+        "old_version": "4.46.0",
+        "new_version": "5.90.1",
+        "details": "Multiple RCE and DoS vulnerabilities"
+      },
+      {
+        "name": "sharp",
+        "old_version": "0.28.3",
+        "new_version": "0.33.2",
+        "details": "Multiple Buffer Overflow and RCE vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 6 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "mongodb",
+        "old_version": "3.6.9",
+        "new_version": "6.3.0",
+        "details": "Multiple NoSQL Injection and DoS vulnerabilities"
+      },
+      {
+        "name": "react-scripts",
+        "old_version": "4.0.3",
+        "new_version": "5.0.1",
+        "details": "Multiple XSS and Arbitrary Code Execution vulnerabilities"
+      },
+      {
+        "name": "passport",
+        "old_version": "0.5.0",
+        "new_version": "0.7.0",
+        "details": "Multiple Auth Bypass vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 7 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "@angular/core",
+        "old_version": "11.2.0",
+        "new_version": "17.2.0",
+        "details": "Multiple XSS and Prototype Pollution vulnerabilities"
+      },
+      {
+        "name": "typescript",
+        "old_version": "4.3.5",
+        "new_version": "5.3.3",
+        "details": "Multiple Arbitrary Code Execution and DoS vulnerabilities"
+      },
+      {
+        "name": "rxjs",
+        "old_version": "6.6.7",
+        "new_version": "7.8.1",
+        "details": "Multiple Memory Corruption vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 8 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "vue",
+        "old_version": "2.6.12",
+        "new_version": "3.4.15",
+        "details": "Multiple XSS and RCE vulnerabilities"
+      },
+      {
+        "name": "nuxt",
+        "old_version": "2.15.8",
+        "new_version": "3.9.3",
+        "details": "Multiple SSRF and DoS vulnerabilities"
+      },
+      {
+        "name": "vue-router",
+        "old_version": "3.5.2",
+        "new_version": "4.2.5",
+        "details": "Multiple Open Redirect vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 9 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "electron",
+        "old_version": "11.5.0",
+        "new_version": "28.1.0",
+        "details": "Multiple RCE and Heap Buffer Overflow vulnerabilities"
+      },
+      {
+        "name": "chokidar",
+        "old_version": "3.5.2",
+        "new_version": "3.5.3",
+        "details": "Path Traversal vulnerability"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 10 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "svelte",
+        "old_version": "3.44.0",
+        "new_version": "4.2.8",
+        "details": "Multiple XSS and RCE vulnerabilities"
+      },
+      {
+        "name": "rollup",
+        "old_version": "2.60.0",
+        "new_version": "4.9.1",
+        "details": "Multiple Code Injection and DoS vulnerabilities"
+      },
+      {
+        "name": "vite",
+        "old_version": "2.9.0",
+        "new_version": "5.1.0",
+        "details": "Multiple SSRF vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 11 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "@nestjs/core",
+        "old_version": "7.6.15",
+        "new_version": "10.3.0",
+        "details": "Multiple DoS and RCE vulnerabilities"
+      },
+      {
+        "name": "rxjs",
+        "old_version": "6.6.7",
+        "new_version": "7.8.1",
+        "details": "Multiple Memory Corruption and DoS vulnerabilities"
+      },
+      {
+        "name": "typeorm",
+        "old_version": "0.2.45",
+        "new_version": "0.3.20",
+        "details": "Multiple SQL Injection vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 12 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "vuex",
+        "old_version": "3.6.2",
+        "new_version": "4.1.0",
+        "details": "Multiple XSS and Prototype Pollution vulnerabilities"
+      },
+      {
+        "name": "vue-router",
+        "old_version": "3.5.2",
+        "new_version": "4.2.5",
+        "details": "Multiple Open Redirect and DoS vulnerabilities"
+      },
+      {
+        "name": "pinia",
+        "old_version": "2.0.0",
+        "new_version": "2.1.7",
+        "details": "Multiple XSS vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 13 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "apollo-server",
+        "old_version": "2.25.0",
+        "new_version": "4.9.5",
+        "details": "Multiple DoS and RCE vulnerabilities"
+      },
+      {
+        "name": "graphql",
+        "old_version": "15.5.1",
+        "new_version": "16.8.1",
+        "details": "Multiple DoS and Prototype Pollution vulnerabilities"
+      },
+      {
+        "name": "graphql-tools",
+        "old_version": "7.0.0",
+        "new_version": "9.0.21",
+        "details": "Multiple XSS vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 14 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "jest",
+        "old_version": "27.0.6",
+        "new_version": "29.7.0",
+        "details": "Multiple Arbitrary Code Execution and DoS vulnerabilities"
+      },
+      {
+        "name": "babel-core",
+        "old_version": "6.26.3",
+        "new_version": "7.23.9",
+        "details": "Multiple Code Injection and RCE vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 15 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "webpack-dev-server",
+        "old_version": "3.11.2",
+        "new_version": "4.15.1",
+        "details": "Multiple RCE and DoS vulnerabilities"
+      },
+      {
+        "name": "html-webpack-plugin",
+        "old_version": "4.5.2",
+        "new_version": "5.6.0",
+        "details": "Multiple XSS and Prototype Pollution vulnerabilities"
+      },
+      {
+        "name": "terser",
+        "old_version": "5.7.0",
+        "new_version": "5.27.0",
+        "details": "Multiple RCE vulnerabilities"
+      }
+    ]
+  }
+]

@@ -4,3 +4,5 @@ __pycache__
 .env
 node_vulnerabilities.json
 python_vulnerabilities.json
+Dockerfile
+.dockerignore

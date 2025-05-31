@@ -1,0 +1,362 @@
+[
+  {
+    "project_name": "Project 16 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "Django",
+        "old_version": "3.2.9",
+        "new_version": "4.2.10",
+        "details": "Multiple SQL Injection, XSS, and CSRF vulnerabilities"
+      },
+      {
+        "name": "djangorestframework",
+        "old_version": "3.12.4",
+        "new_version": "3.14.0",
+        "details": "Multiple XSS and DoS vulnerabilities"
+      },
+      {
+        "name": "psycopg2",
+        "old_version": "2.9.0",
+        "new_version": "2.9.9",
+        "details": "Multiple SQL Injection and Memory Leak vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 17 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "Flask",
+        "old_version": "1.1.4",
+        "new_version": "3.0.2",
+        "details": "Multiple RCE, XSS, and Open Redirect vulnerabilities"
+      },
+      {
+        "name": "numpy",
+        "old_version": "1.21.2",
+        "new_version": "1.26.4",
+        "details": "Multiple Memory Leak and Buffer Overflow vulnerabilities"
+      },
+      {
+        "name": "scikit-learn",
+        "old_version": "0.24.2",
+        "new_version": "1.4.0",
+        "details": "Multiple Arbitrary Code Execution vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 18 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "pandas",
+        "old_version": "1.2.4",
+        "new_version": "2.2.0",
+        "details": "Multiple Code Injection and DoS vulnerabilities"
+      },
+      {
+        "name": "scipy",
+        "old_version": "1.7.1",
+        "new_version": "1.12.0",
+        "details": "Multiple DoS and Memory Corruption vulnerabilities"
+      },
+      {
+        "name": "h5py",
+        "old_version": "3.6.0",
+        "new_version": "3.10.0",
+        "details": "Multiple Buffer Overflow vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 19 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "fastapi",
+        "old_version": "0.68.1",
+        "new_version": "0.109.2",
+        "details": "Multiple Open Redirect and SSRF vulnerabilities"
+      },
+      {
+        "name": "uvicorn",
+        "old_version": "0.15.0",
+        "new_version": "0.27.1",
+        "details": "Multiple DoS and RCE vulnerabilities"
+      },
+      {
+        "name": "pydantic",
+        "old_version": "1.9.0",
+        "new_version": "2.6.1",
+        "details": "Multiple Arbitrary Code Execution vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 20 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "torch",
+        "old_version": "1.9.0",
+        "new_version": "2.2.0",
+        "details": "Multiple Memory Corruption and DoS vulnerabilities"
+      },
+      {
+        "name": "pillow",
+        "old_version": "8.3.2",
+        "new_version": "10.2.0",
+        "details": "Multiple Buffer Overflow and RCE vulnerabilities"
+      },
+      {
+        "name": "torchvision",
+        "old_version": "0.10.0",
+        "new_version": "0.17.0",
+        "details": "Multiple Memory Corruption vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 21 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "opencv-python",
+        "old_version": "4.5.3.56",
+        "new_version": "4.9.0.80",
+        "details": "Multiple Buffer Overflow and RCE vulnerabilities"
+      },
+      {
+        "name": "scikit-learn",
+        "old_version": "0.24.2",
+        "new_version": "1.4.0",
+        "details": "Multiple Arbitrary Code Execution and DoS vulnerabilities"
+      },
+      {
+        "name": "tensorflow",
+        "old_version": "2.5.0",
+        "new_version": "2.15.0",
+        "details": "Multiple RCE vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 22 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "celery",
+        "old_version": "5.1.2",
+        "new_version": "5.3.6",
+        "details": "Multiple DoS and RCE vulnerabilities"
+      },
+      {
+        "name": "redis",
+        "old_version": "3.5.3",
+        "new_version": "5.0.1",
+        "details": "Multiple RCE and Auth Bypass vulnerabilities"
+      },
+      {
+        "name": "kombu",
+        "old_version": "5.2.0",
+        "new_version": "5.3.5",
+        "details": "Multiple DoS vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 23 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "scrapy",
+        "old_version": "2.5.1",
+        "new_version": "2.11.0",
+        "details": "Multiple SSRF, RCE, and DoS vulnerabilities"
+      },
+      {
+        "name": "beautifulsoup4",
+        "old_version": "4.9.3",
+        "new_version": "4.12.3",
+        "details": "Multiple XSS and Memory Corruption vulnerabilities"
+      },
+      {
+        "name": "lxml",
+        "old_version": "4.6.3",
+        "new_version": "5.1.0",
+        "details": "Multiple Arbitrary Code Execution vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 24 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "requests",
+        "old_version": "2.26.0",
+        "new_version": "2.31.0",
+        "details": "Multiple SSRF and Auth Bypass vulnerabilities"
+      },
+      {
+        "name": "selenium",
+        "old_version": "3.141.0",
+        "new_version": "4.17.2",
+        "details": "Multiple Arbitrary Code Execution and XSS vulnerabilities"
+      },
+      {
+        "name": "urllib3",
+        "old_version": "1.26.5",
+        "new_version": "2.2.0",
+        "details": "Multiple DoS vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 25 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "numpy",
+        "old_version": "1.21.2",
+        "new_version": "1.26.4",
+        "details": "Multiple Memory Leak and Buffer Overflow vulnerabilities"
+      },
+      {
+        "name": "matplotlib",
+        "old_version": "3.4.3",
+        "new_version": "3.8.3",
+        "details": "Multiple XSS and DoS vulnerabilities"
+      },
+      {
+        "name": "pytz",
+        "old_version": "2021.3",
+        "new_version": "2024.1",
+        "details": "Multiple Time Zone Manipulation vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 26 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "tensorflow",
+        "old_version": "2.5.0",
+        "new_version": "2.15.0",
+        "details": "Multiple RCE and Memory Corruption vulnerabilities"
+      },
+      {
+        "name": "keras",
+        "old_version": "2.6.0",
+        "new_version": "2.15.0",
+        "details": "Multiple DoS and RCE vulnerabilities"
+      },
+      {
+        "name": "protobuf",
+        "old_version": "3.17.3",
+        "new_version": "4.25.2",
+        "details": "Multiple Arbitrary Code Execution vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 27 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "pytest",
+        "old_version": "6.2.5",
+        "new_version": "8.0.0",
+        "details": "Multiple Arbitrary Code Execution and DoS vulnerabilities"
+      },
+      {
+        "name": "coverage",
+        "old_version": "5.5",
+        "new_version": "7.4.1",
+        "details": "Multiple Code Injection and RCE vulnerabilities"
+      },
+      {
+        "name": "pytest-cov",
+        "old_version": "2.12.0",
+        "new_version": "4.1.0",
+        "details": "Multiple XSS vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 28 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "ansible",
+        "old_version": "2.9.25",
+        "new_version": "9.3.0",
+        "details": "Multiple RCE and Privilege Escalation vulnerabilities"
+      },
+      {
+        "name": "paramiko",
+        "old_version": "2.7.2",
+        "new_version": "3.4.0",
+        "details": "Multiple Auth Bypass and RCE vulnerabilities"
+      },
+      {
+        "name": "jinja2",
+        "old_version": "2.11.3",
+        "new_version": "3.1.3",
+        "details": "Multiple Sandbox Escape vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 29 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "apache-airflow",
+        "old_version": "2.1.4",
+        "new_version": "2.8.1",
+        "details": "Multiple RCE and Auth Bypass vulnerabilities"
+      },
+      {
+        "name": "pyarrow",
+        "old_version": "3.0.0",
+        "new_version": "15.0.0",
+        "details": "Multiple Memory Corruption and DoS vulnerabilities"
+      },
+      {
+        "name": "pandas",
+        "old_version": "1.3.0",
+        "new_version": "2.2.0",
+        "details": "Multiple SQL Injection vulnerabilities"
+      }
+    ]
+  },
+  {
+    "project_name": "Project 30 (Python)",
+    "project_type": "Python",
+    "dependencies": [
+      {
+        "name": "sanic",
+        "old_version": "20.12.3",
+        "new_version": "23.12.1",
+        "details": "Multiple DoS and RCE vulnerabilities"
+      },
+      {
+        "name": "aiohttp",
+        "old_version": "3.7.4",
+        "new_version": "3.9.3",
+        "details": "Multiple SSRF and Memory Leak vulnerabilities"
+      },
+      {
+        "name": "uvloop",
+        "old_version": "0.16.0",
+        "new_version": "0.19.0",
+        "details": "Multiple DoS vulnerabilities"
+      }
+    ]
+  }
+]
