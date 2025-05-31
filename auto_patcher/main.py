@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 def load_project_mapping():
     """Load project mapping from mapping.json"""
     try:
-        with open('../dataset/mapping.json', 'r') as f:
+        with open('test_mapping.json', 'r') as f:
             return json.load(f)
     except Exception as e:
         logger.error(f"Error loading mapping.json: {e}")
@@ -32,7 +32,7 @@ def generate_dockerfiles():
         for project in projects:
             project_name = project['project_name']
             project_type = project['project_type']
-            project_path = f"dataset/repositories/{project_name}"
+            project_path = f"../dataset/repositories/{project_name}"
             
             logger.info(f"Processing project: {project_name} ({project_type})")
             

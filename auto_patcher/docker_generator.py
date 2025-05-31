@@ -1,6 +1,6 @@
 import os
 import json
-import openai
+from openai import OpenAI
 from typing import Dict, Optional
 from pathlib import Path
 import logging
@@ -17,7 +17,7 @@ class DockerfileGenerator:
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         if not self.openai_api_key:
             raise ValueError("OPENAI_API_KEY not found in environment variables")
-        openai.api_key = self.openai_api_key
+        self.client = OpenAI(api_key=self.openai_api_key)
 
     def _analyze_project_files(self, project_path: str) -> Dict:
         """Analyze project files to determine project type and dependencies."""
@@ -65,15 +65,15 @@ class DockerfileGenerator:
 
     def _generate_llm_prompt(self, analysis: Dict) -> str:
         """Generate prompt for LLM based on project analysis."""
-        prompt = f"""Generate a production-ready Dockerfile for a {analysis['project_type']} project with the following specifications:
+        prompt = f"""You are a Docker expert. Generate ONLY the Dockerfile content for a {analysis['project_type']} project. Do not include any markdown formatting, code blocks, or explanations.
 
-Project Analysis:
+Project Details:
 - Type: {analysis['project_type']}
 - Dependencies: {json.dumps(analysis['dependencies'], indent=2)}
 - Build Files: {', '.join(analysis['build_files'])}
 - Test Files: {', '.join(analysis['test_files']) if analysis['test_files'] else 'None'}
 
-Requirements:
+Requirements for the Dockerfile:
 1. Base Image:
    - Use the latest stable base image for {analysis['project_type']}
    - Specify exact version for reproducibility
@@ -112,7 +112,7 @@ Requirements:
    - Use appropriate .dockerignore
    - Implement proper cleanup
 
-Please provide only the Dockerfile content without any explanations. The Dockerfile should be production-ready and include all necessary test assertions."""
+IMPORTANT: Return ONLY the Dockerfile content. Do not include any markdown formatting, code blocks, or explanations. Start directly with the FROM instruction and end with the last Dockerfile instruction."""
 
         return prompt
 
@@ -128,11 +128,11 @@ Please provide only the Dockerfile content without any explanations. The Dockerf
             # Generate prompt
             prompt = self._generate_llm_prompt(analysis)
 
-            # Get LLM response
-            response = openai.ChatCompletion.create(
-                model="gpt-4-mini",
+            # Get LLM response using new API format
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": "You are a Docker expert specializing in creating secure, optimized, and testable Dockerfiles."},
+                    {"role": "system", "content": "You are a Docker expert. Generate ONLY the Dockerfile content without any markdown formatting, code blocks, or explanations."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3,  # Lower temperature for more consistent output
@@ -140,6 +140,9 @@ Please provide only the Dockerfile content without any explanations. The Dockerf
             )
 
             dockerfile_content = response.choices[0].message.content.strip()
+            
+            # Clean up any potential markdown or code block formatting
+            dockerfile_content = dockerfile_content.replace('```Dockerfile', '').replace('```', '').strip()
 
             # Save Dockerfile
             dockerfile_path = Path(project_path) / "Dockerfile"

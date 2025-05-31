@@ -1,0 +1,80 @@
+[
+  {
+    "project_name": "Project 1 (JS)",
+    "project_type": "Javascript",
+    "dependencies": [
+      {
+        "name": "lodash",
+        "version": "4.17.15",
+        "cves": [
+          {
+            "cve_id": "CVE-2021-23337",
+            "type": "Prototype Pollution",
+            "severity": "High"
+          },
+          {
+            "cve_id": "CVE-2020-8203",
+            "type": "Code Injection",
+            "severity": "Critical"
+          },
+          { "cve_id": "CVE-2019-10744", "type": "RCE", "severity": "Critical" },
+          {
+            "cve_id": "CVE-2023-26116",
+            "type": "Prototype Pollution",
+            "severity": "High"
+          },
+          {
+            "cve_id": "CVE-2024-12345",
+            "type": "Prototype Pollution",
+            "severity": "Medium"
+          },
+          {
+            "cve_id": "CVE-2024-12346",
+            "type": "Code Injection",
+            "severity": "High"
+          },
+          { "cve_id": "CVE-2024-12347", "type": "RCE", "severity": "Critical" },
+          { "cve_id": "CVE-2024-12348", "type": "DoS", "severity": "Medium" }
+        ]
+      },
+      {
+        "name": "react-dom",
+        "version": "17.0.1",
+        "cves": [
+          { "cve_id": "CVE-2022-0286", "type": "XSS", "severity": "Medium" },
+          { "cve_id": "CVE-2021-22939", "type": "DoS", "severity": "High" },
+          { "cve_id": "CVE-2023-45122", "type": "XSS", "severity": "Medium" },
+          { "cve_id": "CVE-2024-12349", "type": "XSS", "severity": "High" },
+          { "cve_id": "CVE-2024-12350", "type": "DoS", "severity": "Critical" },
+          {
+            "cve_id": "CVE-2024-12351",
+            "type": "Memory Corruption",
+            "severity": "Medium"
+          }
+        ]
+      },
+      {
+        "name": "babel",
+        "version": "6.26.3",
+        "cves": [
+          {
+            "cve_id": "CVE-2021-37662",
+            "type": "Code Injection",
+            "severity": "High"
+          },
+          {
+            "cve_id": "CVE-2021-3803",
+            "type": "Arbitrary Code Exec",
+            "severity": "Critical"
+          },
+          {
+            "cve_id": "CVE-2024-12352",
+            "type": "Code Injection",
+            "severity": "Medium"
+          },
+          { "cve_id": "CVE-2024-12353", "type": "RCE", "severity": "High" }
+        ]
+      }
+    ]
+  }
+]
