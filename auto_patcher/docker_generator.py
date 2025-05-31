@@ -4,14 +4,20 @@ import openai
 from typing import Dict, Optional
 from pathlib import Path
 import logging
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class DockerfileGenerator:
-    def __init__(self, openai_api_key: str):
-        self.openai_api_key = openai_api_key
-        openai.api_key = openai_api_key
+    def __init__(self):
+        self.openai_api_key = os.getenv("OPENAI_API_KEY")
+        if not self.openai_api_key:
+            raise ValueError("OPENAI_API_KEY not found in environment variables")
+        openai.api_key = self.openai_api_key
 
     def _analyze_project_files(self, project_path: str) -> Dict:
         """Analyze project files to determine project type and dependencies."""
@@ -20,7 +26,8 @@ class DockerfileGenerator:
             "project_type": None,
             "dependencies": {},
             "build_files": [],
-            "has_docker": False
+            "has_docker": False,
+            "test_files": []
         }
 
         # Check for Dockerfile
@@ -35,6 +42,9 @@ class DockerfileGenerator:
                 pkg_data = json.load(f)
                 analysis["dependencies"] = pkg_data.get("dependencies", {})
                 analysis["build_files"].append("package.json")
+                # Check for test scripts
+                if "scripts" in pkg_data and "test" in pkg_data["scripts"]:
+                    analysis["test_files"].append("package.json")
 
         # Check for Python project
         elif (project_path / "requirements.txt").exists():
@@ -47,27 +57,62 @@ class DockerfileGenerator:
                         deps[name] = version
                 analysis["dependencies"] = deps
                 analysis["build_files"].append("requirements.txt")
+                # Check for test files
+                if (project_path / "tests").exists():
+                    analysis["test_files"].append("tests")
 
         return analysis
 
     def _generate_llm_prompt(self, analysis: Dict) -> str:
         """Generate prompt for LLM based on project analysis."""
-        prompt = f"""Generate a Dockerfile for a {analysis['project_type']} project with the following specifications:
+        prompt = f"""Generate a production-ready Dockerfile for a {analysis['project_type']} project with the following specifications:
 
-Project Type: {analysis['project_type']}
-Dependencies: {json.dumps(analysis['dependencies'], indent=2)}
-Build Files: {', '.join(analysis['build_files'])}
+Project Analysis:
+- Type: {analysis['project_type']}
+- Dependencies: {json.dumps(analysis['dependencies'], indent=2)}
+- Build Files: {', '.join(analysis['build_files'])}
+- Test Files: {', '.join(analysis['test_files']) if analysis['test_files'] else 'None'}
 
 Requirements:
-1. Use the latest stable base image
-2. Include all necessary build steps
-3. Optimize for security and minimal image size
-4. Include health check
-5. Set up proper working directory
-6. Include test running capability
-7. Handle both development and production environments
+1. Base Image:
+   - Use the latest stable base image for {analysis['project_type']}
+   - Specify exact version for reproducibility
 
-Please provide only the Dockerfile content without any explanations."""
+2. Build Process:
+   - Multi-stage build for minimal final image
+   - Copy only necessary files
+   - Install dependencies in build stage
+   - Optimize layer caching
+
+3. Security:
+   - Run as non-root user
+   - Scan for vulnerabilities
+   - Remove unnecessary build tools
+   - Use .dockerignore
+
+4. Testing:
+   - Include test running capability
+   - Add health check endpoint
+   - Implement build verification steps
+   - Add test assertions for:
+     * Dependency installation
+     * Build process
+     * Application startup
+     * Health check response
+
+5. Environment:
+   - Support both development and production
+   - Use environment variables for configuration
+   - Set up proper working directory
+   - Configure logging
+
+6. Optimization:
+   - Minimize image size
+   - Optimize layer caching
+   - Use appropriate .dockerignore
+   - Implement proper cleanup
+
+Please provide only the Dockerfile content without any explanations. The Dockerfile should be production-ready and include all necessary test assertions."""
 
         return prompt
 
@@ -85,13 +130,13 @@ Please provide only the Dockerfile content without any explanations."""
 
             # Get LLM response
             response = openai.ChatCompletion.create(
-                model="gpt-4",
+                model="gpt-4-mini",
                 messages=[
-                    {"role": "system", "content": "You are a Docker expert. Generate optimized Dockerfiles."},
+                    {"role": "system", "content": "You are a Docker expert specializing in creating secure, optimized, and testable Dockerfiles."},
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.7,
-                max_tokens=1000
+                temperature=0.3,  # Lower temperature for more consistent output
+                max_tokens=2000
             )
 
             dockerfile_content = response.choices[0].message.content.strip()

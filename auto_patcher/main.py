@@ -1,8 +1,8 @@
 import os
-import argparse
+import json
 import logging
 from pathlib import Path
-from orchestrator import PatchingOrchestrator
+from docker_generator import DockerfileGenerator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -10,69 +10,58 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def main():
-    parser = argparse.ArgumentParser(description='Automated Vulnerability Patching Tool')
-    parser.add_argument('--repositories', type=str, required=True,
-                      help='Path to the repositories directory')
-    parser.add_argument('--openai-key', type=str, required=True,
-                      help='OpenAI API key')
-    parser.add_argument('--output', type=str, default='patch_report.json',
-                      help='Output file for the patch report (default: patch_report.json)')
-    parser.add_argument('--package', type=str,
-                      help='Package name to update (optional)')
-    parser.add_argument('--version', type=str,
-                      help='New version of the package (optional)')
-    parser.add_argument('--project', type=str,
-                      help='Specific project to update (optional)')
-
-    args = parser.parse_args()
-
-    # Initialize orchestrator
-    orchestrator = PatchingOrchestrator(args.openai_key)
-
+def load_project_mapping():
+    """Load project mapping from mapping.json"""
     try:
-        # Step 1: Generate Dockerfiles for all projects
-        logger.info("Generating Dockerfiles for all projects...")
-        dockerfile_results = orchestrator.generate_dockerfiles(args.repositories)
+        with open('../dataset/mapping.json', 'r') as f:
+            return json.load(f)
+    except Exception as e:
+        logger.error(f"Error loading mapping.json: {e}")
+        raise
+
+def generate_dockerfiles():
+    """Generate Dockerfiles for all projects in the mapping"""
+    try:
+        # Initialize DockerfileGenerator
+        generator = DockerfileGenerator()
         
-        # Log Dockerfile generation results
-        for project, success in dockerfile_results.items():
-            status = "successfully" if success else "failed to"
-            logger.info(f"{status} generate Dockerfile for {project}")
-
-        # Step 2: If package and version are specified, update the vulnerability
-        if args.package and args.version:
-            if args.project:
-                # Update specific project
-                project_path = os.path.join(args.repositories, args.project)
-                if not os.path.exists(project_path):
-                    logger.error(f"Project {args.project} not found")
-                    return
+        # Load project mapping
+        projects = load_project_mapping()
+        
+        # Process each project
+        for project in projects:
+            project_name = project['project_name']
+            project_type = project['project_type']
+            project_path = f"dataset/repositories/{project_name}"
+            
+            logger.info(f"Processing project: {project_name} ({project_type})")
+            
+            # Verify project path exists
+            if not os.path.exists(project_path):
+                logger.warning(f"Project path does not exist: {project_path}")
+                continue
                 
-                logger.info(f"Updating {args.package} to {args.version} in {args.project}")
-                report = orchestrator.update_vulnerability(
-                    project_path,
-                    args.package,
-                    args.version
-                )
-                logger.info(f"Update result: {report['message']}")
-            else:
-                # Update all projects
-                logger.info(f"Updating {args.package} to {args.version} in all projects")
-                for project in dockerfile_results.keys():
-                    if dockerfile_results[project]:  # Only update projects with successful Dockerfile generation
-                        report = orchestrator.update_vulnerability(
-                            project,
-                            args.package,
-                            args.version
-                        )
-                        logger.info(f"Update result for {project}: {report['message']}")
+            # Generate Dockerfile
+            try:
+                dockerfile_content = generator.generate_dockerfile(project_path)
+                if dockerfile_content:
+                    logger.info(f"Successfully generated Dockerfile for {project_name}")
+                else:
+                    logger.error(f"Failed to generate Dockerfile for {project_name}")
+            except Exception as e:
+                logger.error(f"Error generating Dockerfile for {project_name}: {e}")
+                continue
 
-        # Step 3: Generate and save report
-        logger.info("Generating patch report...")
-        orchestrator.save_report(args.output)
-        logger.info(f"Report saved to {args.output}")
+    except Exception as e:
+        logger.error(f"An error occurred during Dockerfile generation: {e}")
+        raise
 
+def main():
+    """Main entry point"""
+    try:
+        logger.info("Starting Dockerfile generation process...")
+        generate_dockerfiles()
+        logger.info("Dockerfile generation process completed")
     except Exception as e:
         logger.error(f"An error occurred: {str(e)}")
         raise
