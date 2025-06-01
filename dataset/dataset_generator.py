@@ -27,6 +27,7 @@ class DatasetGenerator:
             "main": "index.js",
             "scripts": {
                 "start": "node index.js",
+                "build": "webpack --config webpack.config.js",
                 "test": "echo \"Error: no test specified\" && exit 1"
             },
             "dependencies": {

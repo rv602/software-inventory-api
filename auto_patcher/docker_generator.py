@@ -77,10 +77,11 @@ Requirements for the Dockerfile:
 1. Base Image:
    - Use the latest stable base image for {analysis['project_type']}
    - Specify exact version for reproducibility
+   - Use the slim version of the base image
 
 2. Build Process:
    - Multi-stage build for minimal final image
-   - Copy only necessary files
+   - Copy only necessary files but not package-lock.json
    - Install dependencies in build stage
    - Optimize layer caching
 
