@@ -5,7 +5,7 @@ from typing import List, Dict
 from datetime import datetime
 import shutil
 
-BASE_PATH = "/Users/abhinavpandey/Developer/software-inventory-api/dataset/repositories"
+BASE_PATH = "/Users/abhinavpandey/Developer/software-inventory-api/auto_patcher/tests"
 REPORT_PATH = "/Users/abhinavpandey/Developer/software-inventory-api/auto_patcher/reports"
 
 def backup_package_json(project_path: str):
@@ -121,4 +121,18 @@ def test_project(project: Dict):
 
     save_report(project_name, report)
     print(f"📄 Report saved to: {os.path.join(REPORT_PATH, project_name.replace(' ', '_'), 'report.json')}")
+
+if __name__ == "__main__":
+    test_input = [
+        {
+            "project_name": "test-project",
+            "dependencies": [
+                {"name": "lodash", "version": "4.17.21"},
+                {"name": "react-dom", "version": "17.0.2"}
+            ]
+        }
+    ]
+
+    for project in test_input:
+        test_project(project)
 
