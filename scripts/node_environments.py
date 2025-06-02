@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import json
 import os
 import platform
@@ -10,14 +10,25 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 from bson import ObjectId
 import gzip
-
+import socket
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from schema.schema import ProjectData, SystemInfo, JavaScriptVulnerability
 from constants import log_dir
 from constants import db_url_prod, db_url_dev, db_name, collection_js_name
 
 load_dotenv()
+
+
+def get_system_info() -> SystemInfo:
+    """Get system info from environment variables"""
+    return {
+        "hostname": os.getenv('SYSTEM_HOSTNAME'),
+        "system_type": os.getenv('SYSTEM_TYPE'),
+        "mac_address": os.getenv('SYSTEM_MAC'),
+        "ip_address": os.getenv('SYSTEM_IP')
+    }
 
 
 def test_mongodb_connection():
@@ -96,7 +107,6 @@ def add_timestamps(data):
 
 
 def send_to_mongodb(data):
-    print("data", data)
     try:
         if not data:
             print("No vulnerability data to send to MongoDB")
@@ -109,7 +119,7 @@ def send_to_mongodb(data):
         if isinstance(data, dict):
             data = [data]
 
-        current_time = datetime.utcnow()
+        current_time = datetime.now(timezone.utc)
 
         print(f"Processing {len(data)} documents for MongoDB")
 
@@ -117,32 +127,37 @@ def send_to_mongodb(data):
             path = doc["Path"]
             vulnerabilities = doc["Vulnerabilities"]
 
-            # Check if a document with the same Path exists
-            existing_doc = collection.find_one({"Path": path})
+            # Check if a document with the same Path and device exists
+            existing_doc = collection.find_one({
+                "Path": path,
+                "SystemInfo.mac_address": doc["SystemInfo"]["mac_address"]
+            })
 
             if existing_doc:
                 # If vulnerabilities differ, update them; otherwise, just update the timestamp
                 if existing_doc.get("Vulnerabilities") != vulnerabilities:
                     collection.update_one(
-                        {"Path": path},
+                        {"Path": path, "SystemInfo.mac_address": doc["SystemInfo"]["mac_address"]},
                         {
                             "$set": {
                                 "Vulnerabilities": vulnerabilities,
                                 "updatedAt": current_time,
+                                "SystemInfo": doc["SystemInfo"],
+                                "Score": doc["Score"]
                             }
                         },
                     )
                     print(f"Updated vulnerabilities for Path: {path}")
                 else:
                     collection.update_one(
-                        {"Path": path},
-                        {"$set": {"updatedAt": current_time}},
+                        {"Path": path, "SystemInfo.mac_address": doc["SystemInfo"]["mac_address"]},
+                        {"$set": {
+                            "updatedAt": current_time,
+                            "SystemInfo": doc["SystemInfo"]
+                        }},
                     )
                     print(f"Updated only the timestamp for Path: {path}")
             else:
-                # Add timestamps to new documents
-                doc["createdAt"] = current_time
-                doc["updatedAt"] = current_time
                 collection.insert_one(doc)
                 print(f"Inserted new document for Path: {path}")
 
@@ -163,6 +178,7 @@ if __name__ == "__main__":
         exit()
 
     start_time = time.time()
+    system_info = get_system_info()
 
     node_module_paths = get_node_module_paths()
     vulnerable_dependencies = get_vulnerable_dependencies_for_paths(node_module_paths)
@@ -182,7 +198,7 @@ if __name__ == "__main__":
                 "Via": vulnerability["via"],
                 "Range": vulnerability["range"],
                 "Nodes": vulnerability["nodes"],
-                "Fix Available": vulnerability["fixAvailable"],
+                "Fix_Available": vulnerability["fixAvailable"],
             }
 
             advisory_list.append(advisory_info)
@@ -190,17 +206,22 @@ if __name__ == "__main__":
         dependency_data = {
             "ID": str(uuid.uuid4()),
             "Path": path,
+            "ProjectType": "javascript",
+            "SystemInfo": system_info,
+            "Score": None,
             "Vulnerabilities": advisory_list,
+            "createdAt": datetime.now(timezone.utc),
+            "updatedAt": datetime.now(timezone.utc)
         }
         result_data.append(dependency_data)
 
     current_log_dir = "js"
     os.makedirs(log_dir, exist_ok=True)
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
     file_path = f"{log_dir}/{current_log_dir}/{timestamp}.json.gz"
 
     with gzip.open(file_path, "wt", encoding="utf-8") as f:
-        json.dump(result_data, f, indent=4)
+        json.dump(result_data, f, indent=4, default=default_serializer)
 
     print(f"Data saved to compressed file: {file_path}")
     send_to_mongodb(result_data)

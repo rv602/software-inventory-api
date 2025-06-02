@@ -9,12 +9,12 @@ from dotenv import load_dotenv
 from bson import ObjectId
 import gzip
 from datetime import datetime, timezone
-
+import socket
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from constants import log_dir
-from constants import db_url_prod, db_url_dev, db_name, collection_py_name
+from schema.schema import ProjectData, SystemInfo, PythonVulnerability, JavaScriptVulnerability
+from constants import log_dir, db_url_prod, db_url_dev, db_name, collection_py_name
 
 load_dotenv()
 
@@ -47,39 +47,45 @@ def send_to_mongodb(data):
         collection = db[collection_py_name]
 
         for entry in data:
-            # Add createdAt and updatedAt timestamps
-            # entry["createdAt"] = entry.get("createdAt", datetime.utcnow())
-            # entry["updatedAt"] = datetime.utcnow()
             entry["createdAt"] = entry.get("createdAt", datetime.now(timezone.utc))
             entry["updatedAt"] = datetime.now(timezone.utc)
 
-            # Check if entry exists
-            existing = collection.find_one({"Path": entry["Path"]})
+            # Check if entry exists with both Path and device identifier
+            existing = collection.find_one({
+                "Path": entry["Path"],
+                "SystemInfo.mac_address": entry["SystemInfo"]["mac_address"]
+            })
 
             if existing:
-                # Compare vulnerabilities excluding createdAt and updatedAt
-                old_entry = {
-                    k: v
-                    for k, v in existing.items()
-                    if k not in ["createdAt", "updatedAt"]
-                }
-                new_entry = {
-                    k: v
-                    for k, v in entry.items()
-                    if k not in ["createdAt", "updatedAt"]
-                }
+                # Compare excluding timestamps and system info
+                old_entry = {k: v for k, v in existing.items() 
+                           if k not in ["createdAt", "updatedAt", "SystemInfo"]}
+                new_entry = {k: v for k, v in entry.items() 
+                           if k not in ["createdAt", "updatedAt", "SystemInfo"]}
 
                 if old_entry == new_entry:
-                    # Update only updatedAt if data hasn't changed
+                    # Update only updatedAt and system info if data hasn't changed
                     collection.update_one(
-                        {"Path": entry["Path"]},
-                        {"$set": {"updatedAt": entry["updatedAt"]}},
+                        {
+                            "Path": entry["Path"],
+                            "SystemInfo.mac_address": entry["SystemInfo"]["mac_address"]
+                        },
+                        {"$set": {
+                            "updatedAt": entry["updatedAt"],
+                            "SystemInfo": entry["SystemInfo"]
+                        }},
                     )
                 else:
                     # Replace document if data has changed
-                    collection.replace_one({"Path": entry["Path"]}, entry)
+                    collection.replace_one(
+                        {
+                            "Path": entry["Path"],
+                            "SystemInfo.mac_address": entry["SystemInfo"]["mac_address"]
+                        }, 
+                        entry
+                    )
             else:
-                # Insert new document with createdAt and updatedAt
+                # Insert new document
                 collection.insert_one(entry)
 
         print("Data successfully processed in MongoDB")
@@ -89,7 +95,7 @@ def send_to_mongodb(data):
         print(f"Error sending data to MongoDB: {e}")
         backup_file = "python_vulnerabilities.json"
         with open(backup_file, "w") as f:
-            json.dump(data, f, indent=4)
+            json.dump(data, f, default=default_serializer, indent=4)
         print(f"Data saved to backup file: {backup_file}")
 
 
@@ -132,7 +138,19 @@ def modify_json_data(json_data):
     return modified_data
 
 
+def get_system_info() -> SystemInfo:
+    """Get system info from environment variables"""
+    return {
+        "hostname": os.getenv('SYSTEM_HOSTNAME'),
+        "system_type": os.getenv('SYSTEM_TYPE'),
+        "mac_address": os.getenv('SYSTEM_MAC'),
+        "ip_address": os.getenv('SYSTEM_IP')
+    }
+
+
 def update_json_with_dependencies(json_data):
+    system_info = get_system_info()
+    
     for obj in json_data:
         path = obj["Path"]
         env = obj["Env"]
@@ -175,6 +193,15 @@ def update_json_with_dependencies(json_data):
         else:
             obj["Removing"] = True
 
+        # Update the object structure to match the new schema
+        obj.update({
+            "ProjectType": "python",
+            "SystemInfo": system_info,
+            "Score": None,
+            "createdAt": datetime.now(timezone.utc),
+            "updatedAt": datetime.now(timezone.utc)
+        })
+
     json_data_to_return = []
     for obj in json_data:
         if "Removing" not in obj:
@@ -184,7 +211,7 @@ def update_json_with_dependencies(json_data):
 
 def write_json_to_file(data, file_path):
     with gzip.open(file_path, "wt", encoding="utf-8") as f:
-        json.dump(data, f, indent=4)
+        json.dump(data, f, indent=4, default=default_serializer)
 
 
 if __name__ == "__main__":
@@ -192,6 +219,12 @@ if __name__ == "__main__":
 
     if not test_mongodb_connection():
         print("Aborting script due to MongoDB connection failure")
+        sys.exit(1)
+
+    # Get system info at the start
+    system_info = get_system_info()
+    if not all(system_info.values()):
+        print("Error: Missing system information from environment variables")
         sys.exit(1)
 
     python_paths = get_python_paths()
@@ -202,8 +235,8 @@ if __name__ == "__main__":
 
     # Create a structured filename with timestamp
     current_log_dir = "py"
-    os.makedirs(log_dir, exist_ok=True)  # Ensure the logs directory exists
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
+    os.makedirs(log_dir, exist_ok=True)
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
     file_path = f"{log_dir}/{current_log_dir}/{timestamp}.json.gz"
 
     # Save backup with structured filename
