@@ -22,7 +22,7 @@ load_dotenv()
 
 def test_mongodb_connection():
     try:
-        client = MongoClient(db_url_dev)
+        client = MongoClient(db_url_prod)
         client.server_info()
         client.close()
         print("MongoDB connection successful")
@@ -35,6 +35,8 @@ def test_mongodb_connection():
 def default_serializer(obj):
     if isinstance(obj, ObjectId):
         return str(obj)
+    if isinstance(obj, datetime):
+        return obj.isoformat()  # Convert datetime to ISO 8601 string
     raise TypeError(f"Type {obj.__class__.__name__} not serializable")
 
 
@@ -100,7 +102,7 @@ def send_to_mongodb(data):
             print("No vulnerability data to send to MongoDB")
             return
 
-        client = MongoClient(db_url_dev)
+        client = MongoClient(db_url_prod)
         db = client[db_name]
         collection = db[collection_js_name]
 
@@ -202,6 +204,10 @@ if __name__ == "__main__":
 
     print(f"Data saved to compressed file: {file_path}")
     send_to_mongodb(result_data)
+
+    json_file_path = "node_vulnerabilities.json"
+    with open(json_file_path, "w", encoding="utf-8") as f:
+        json.dump(result_data, f, indent=4, default=default_serializer)
 
     end = time.time()
     print(f"Execution time: {end - start_time} seconds")

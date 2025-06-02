@@ -8,7 +8,8 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 from bson import ObjectId
 import gzip
-from datetime import datetime
+from datetime import datetime, timezone
+
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -17,10 +18,19 @@ from constants import db_url_prod, db_url_dev, db_name, collection_py_name
 
 load_dotenv()
 
+def default_serializer(obj):
+    if isinstance(obj, ObjectId):
+        return str(obj)
+    elif isinstance(obj, datetime):
+        return obj.isoformat()  # Convert datetime to ISO 8601 string
+    raise TypeError(f"Type {obj.__class__.__name__} not serializable")
+
+datetime.now(timezone.utc)
+
 
 def test_mongodb_connection():
     try:
-        client = MongoClient(db_url_dev)
+        client = MongoClient(db_url_prod)
         client.server_info()
         client.close()
         print("MongoDB connection successful")
@@ -32,14 +42,16 @@ def test_mongodb_connection():
 
 def send_to_mongodb(data):
     try:
-        client = MongoClient(db_url_dev)
+        client = MongoClient(db_url_prod)
         db = client[db_name]
         collection = db[collection_py_name]
 
         for entry in data:
             # Add createdAt and updatedAt timestamps
-            entry["createdAt"] = entry.get("createdAt", datetime.utcnow())
-            entry["updatedAt"] = datetime.utcnow()
+            # entry["createdAt"] = entry.get("createdAt", datetime.utcnow())
+            # entry["updatedAt"] = datetime.utcnow()
+            entry["createdAt"] = entry.get("createdAt", datetime.now(timezone.utc))
+            entry["updatedAt"] = datetime.now(timezone.utc)
 
             # Check if entry exists
             existing = collection.find_one({"Path": entry["Path"]})
@@ -200,6 +212,11 @@ if __name__ == "__main__":
 
     # Send to MongoDB
     send_to_mongodb(updated_data)
+
+    json_file_path = "python_vulnerabilities.json"
+    with open(json_file_path, "w", encoding="utf-8") as f:
+        json.dump(updated_data, f, default=default_serializer, indent=4)
+    print(f"Data saved to file: {json_file_path}")
 
     end_time = time.time()
     print(f"Total execution time: {end_time - start_time:.2f} seconds")
