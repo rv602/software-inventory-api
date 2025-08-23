@@ -1,5 +1,5 @@
 annotated-types==0.6.0
-anyio==3.7.1
+anyio==4.4.0
 appdirs==1.4.4
 attrs==24.3.0
 cattrs==24.1.2
@@ -10,7 +10,7 @@ dnspython==2.4.2
 fastapi==0.103.2
 h11==0.14.0
 httptools==0.6.0
-idna==3.4
+idna==3.7
 Jinja2==3.1.4
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
